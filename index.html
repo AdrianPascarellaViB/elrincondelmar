@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Codificación de caracteres -->
+  <meta charset="UTF-8">
+  <!-- Viewport para diseño responsivo -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO: Metaetiquetas básicas -->
+  <meta name="description" content="El Rincón del Mar, restaurante mediterráneo en Barcelona. Cocina tradicional con productos frescos del mar desde 1998. Reserva tu mesa en el corazón de la Barceloneta.">
+  <meta name="keywords" content="restaurante mediterráneo Barcelona, paella marinera, mariscos Barcelona, restaurante Barceloneta, cocina mediterránea, El Rincón del Mar">
+  <meta name="author" content="El Rincón del Mar">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph (redes sociales) -->
+  <meta property="og:type" content="restaurant">
+  <meta property="og:title" content="El Rincón del Mar | Restaurante Mediterráneo en Barcelona">
+  <meta property="og:description" content="Cocina mediterránea auténtica desde 1998. Paella marinera, mariscos y tapas en el corazón de Barcelona.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80">
+  <meta property="og:url" content="https://www.elrincondelmar.es">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="El Rincón del Mar">
+
+  <!-- Schema.org JSON-LD: metadatos estructurados para motores de búsqueda -->
+  <!-- NOTA: Este script es metadata HTML, NO JavaScript ejecutable -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "El Rincón del Mar",
+    "description": "Restaurante mediterráneo en Barcelona especializado en paella marinera, mariscos y tapas. Cocina tradicional con productos frescos desde 1998.",
+    "url": "https://www.elrincondelmar.es",
+    "telephone": "+34931234567",
+    "email": "info@elrincondelmar.es",
+    "foundingDate": "1998",
+    "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Carrer de la Marina, 45",
+      "addressLocality": "Barcelona",
+      "postalCode": "08005",
+      "addressCountry": "ES"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "41.3887",
+      "longitude": "2.1958"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "13:00",
+        "closes": "16:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "20:00",
+        "closes": "23:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday", "Sunday"],
+        "opens": "12:30",
+        "closes": "16:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday", "Sunday"],
+        "opens": "20:00",
+        "closes": "23:30"
+      }
+    ],
+    "servesCuisine": ["Mediterranean", "Seafood", "Spanish"],
+    "priceRange": "€€",
+    "hasMenu": "https://www.elrincondelmar.es/carta.html",
+    "acceptsReservations": "True",
+    "employee": {
+      "@type": "Person",
+      "name": "Carlos Martínez",
+      "jobTitle": "Chef Principal"
+    }
+  }
+  </script>
+
+  <title>Inicio | El Rincón del Mar</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Cookie: el input DEBE ser el PRIMER hijo del body para que el selector CSS ~ funcione -->
+  <input type="checkbox" id="cookie-close" class="cookie-checkbox">
+
+  <!-- ===================================================================
+       CABECERA / HEADER
+       Header fijo (sticky) con logo y navegación. El menú hamburguesa
+       funciona solo con CSS usando un checkbox oculto.
+       =================================================================== -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- Logo del restaurante -->
+      <a href="index.html" class="logo" aria-label="El Rincón del Mar - Página de inicio">
+        <span class="logo-name">El Rincón del Mar</span>
+        <span class="logo-tagline">Restaurante Mediterráneo · Barcelona</span>
+      </a>
+
+      <!-- Input checkbox para el menú hamburguesa (CSS-only, no JavaScript) -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+
+      <!-- Etiqueta del hamburger: muestra 3 barras en móvil -->
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <!-- Navegación principal -->
+      <nav class="site-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html" class="active" aria-current="page">Inicio</a></li>
+          <li><a href="carta.html">La Carta</a></li>
+          <li><a href="nosotros.html">Sobre Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ===================================================================
+       CONTENIDO PRINCIPAL
+       =================================================================== -->
+  <main>
+
+    <!-- ---------------------------------------------------------------
+         SECCIÓN HERO
+         Imagen de fondo con overlay oscuro, título principal y CTAs.
+         La imagen de Unsplash muestra un restaurante mediterráneo.
+         --------------------------------------------------------------- -->
+    <section class="hero" aria-label="Bienvenida al restaurante">
+
+      <!-- Fondo con imagen de Unsplash y overlay CSS -->
+      <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80');" role="img" aria-label="Interior del restaurante El Rincón del Mar"></div>
+
+      <!-- Contenido centrado sobre la imagen -->
+      <div class="hero-content">
+        <span class="hero-eyebrow">Desde 1998 · Barcelona</span>
+        <h1>Sabores del Mediterráneo</h1>
+        <p class="hero-subtitle">Tradición, frescura y pasión por la cocina en cada plato que servimos</p>
+
+        <!-- Botones de llamada a la acción -->
+        <div class="hero-buttons">
+          <a href="carta.html" class="btn btn-primary">Ver la Carta</a>
+          <a href="contacto.html" class="btn btn-outline">Hacer una Reserva</a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ---------------------------------------------------------------
+         SECCIÓN BIENVENIDA
+         Cuadrícula de 2 columnas: imagen a la izquierda, texto a la derecha.
+         Presenta la historia y filosofía del restaurante.
+         --------------------------------------------------------------- -->
+    <section class="section" aria-labelledby="welcome-heading">
+      <div class="container">
+        <div class="welcome-grid">
+
+          <!-- Imagen con badge de años de experiencia -->
+          <figure class="welcome-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80"
+              alt="Cocina mediterránea tradicional en El Rincón del Mar"
+              width="800"
+              height="420"
+              loading="lazy"
+            >
+            <!-- Badge con años de experiencia -->
+            <div class="welcome-badge" role="img" aria-label="Más de 25 años de experiencia">+25<br>años</div>
+          </figure>
+
+          <!-- Texto de bienvenida -->
+          <div class="welcome-text">
+            <h2 id="welcome-heading">Bienvenidos a nuestra casa</h2>
+            <div class="divider divider-left"></div>
+            <p>
+              Desde 1998, El Rincón del Mar ha sido el punto de encuentro de quienes aman
+              la auténtica cocina mediterránea. Ubicados en el corazón de Barcelona, cerca
+              del emblemático Puerto Olímpico, ofrecemos una experiencia gastronómica única
+              donde el mar y la tradición se fusionan en cada plato.
+            </p>
+            <p>
+              Nuestro chef Carlos Martínez, con más de 20 años de experiencia, selecciona
+              cada día los mejores productos frescos del mercado para crear platos que
+              respetan la tradición mientras abrazan la creatividad culinaria.
+            </p>
+            <p>
+              Familia, producto y honestidad. Tres valores que guían nuestra cocina desde
+              el primer día y que nos han convertido en referente de la gastronomía
+              barcelonesa.
+            </p>
+            <a href="nosotros.html" class="btn btn-outline-dark" style="margin-top:0.75rem;">Conoce nuestra historia</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------------
+         SECCIÓN ESPECIALIDADES
+         Cuadrícula de 3 tarjetas (cards) con imagen y descripción.
+         Muestra los platos estrella del restaurante.
+         --------------------------------------------------------------- -->
+    <section class="section section-cream" aria-labelledby="especialidades-heading">
+      <div class="container">
+
+        <header class="section-header">
+          <h2 id="especialidades-heading">Nuestras Especialidades</h2>
+          <div class="divider"></div>
+          <p>Platos elaborados con ingredientes frescos seleccionados cada mañana en el mercado</p>
+        </header>
+
+        <!-- Grid de 3 tarjetas de especialidades -->
+        <div class="cards-grid">
+
+          <!-- Especialidad 1: Paella Marinera -->
+          <article class="card">
+            <img
+              class="card-img"
+              src="https://images.unsplash.com/photo-1534080564583-6be75777b70a?w=800&q=80"
+              alt="Paella marinera con gambas, mejillones y calamares"
+              width="800"
+              height="220"
+              loading="lazy"
+            >
+            <div class="card-body">
+              <h3>Paella Marinera</h3>
+              <p>
+                Nuestra paella es el alma del restaurante. Elaborada con arroz bomba de
+                Calasparra, caldo casero de pescado y los mejores mariscos frescos.
+                Un clásico irresistible que nos define desde 1998.
+              </p>
+            </div>
+          </article>
+
+          <!-- Especialidad 2: Mariscos al Natural -->
+          <article class="card">
+            <img
+              class="card-img"
+              src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=800&q=80"
+              alt="Mariscos frescos al natural: ostras, gambas y nécoras"
+              width="800"
+              height="220"
+              loading="lazy"
+            >
+            <div class="card-body">
+              <h3>Mariscos al Natural</h3>
+              <p>
+                Selección diaria de los mejores mariscos de las lonjas del Mediterráneo.
+                Servidos al natural para apreciar toda su frescura y sabor. Gambas,
+                langostinos, mejillones y mucho más.
+              </p>
+            </div>
+          </article>
+
+          <!-- Especialidad 3: Tapas Mediterráneas -->
+          <article class="card">
+            <img
+              class="card-img"
+              src="https://images.unsplash.com/photo-1541014741259-de529411b96a?w=800&q=80"
+              alt="Variedad de tapas mediterráneas"
+              width="800"
+              height="220"
+              loading="lazy"
+            >
+            <div class="card-body">
+              <h3>Tapas Mediterráneas</h3>
+              <p>
+                Una selección de tapas que recorre los sabores del Mediterráneo. Pan con
+                tomate, croquetas caseras, boquerones en vinagre y una variedad de
+                conservas artesanales. El aperitivo perfecto.
+              </p>
+            </div>
+          </article>
+
+        </div><!-- fin cards-grid -->
+
+        <!-- Enlace a la carta completa -->
+        <div class="text-center" style="margin-top:2.5rem;">
+          <a href="carta.html" class="btn btn-primary">Ver la carta completa</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------------
+         SECCIÓN VIDEO
+         Video de YouTube embebido con iframe responsivo (16:9).
+         El div.video-wrapper usa padding-bottom:56.25% para mantener el ratio.
+         --------------------------------------------------------------- -->
+    <section class="section" aria-labelledby="video-heading">
+      <div class="container">
+
+        <header class="section-header">
+          <h2 id="video-heading">El Arte de la Paella Mediterránea</h2>
+          <div class="divider"></div>
+          <p>Descubre cómo preparamos nuestra paella marinera, desde la selección de ingredientes hasta el punto perfecto de cocción</p>
+        </header>
+
+        <!-- Wrapper responsivo para iframe de YouTube -->
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/9WXoFYBBs5I"
+            title="El Arte de la Paella Mediterránea - El Rincón del Mar"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------------
+         SECCIÓN ESTADÍSTICAS (barra oscura)
+         Cuadrícula de 4 columnas con cifras destacadas del restaurante.
+         Usa la clase section-dark para fondo azul marino.
+         --------------------------------------------------------------- -->
+    <section class="section section-dark" aria-label="Cifras del restaurante">
+      <div class="container">
+
+        <div class="stats-grid">
+
+          <!-- Estadística 1 -->
+          <div class="stat-item">
+            <span class="stat-number">25+</span>
+            <span class="stat-label">Años de experiencia</span>
+          </div>
+
+          <!-- Estadística 2 -->
+          <div class="stat-item">
+            <span class="stat-number">150</span>
+            <span class="stat-label">Comensales al día</span>
+          </div>
+
+          <!-- Estadística 3 -->
+          <div class="stat-item">
+            <span class="stat-number">40+</span>
+            <span class="stat-label">Platos en carta</span>
+          </div>
+
+          <!-- Estadística 4 -->
+          <div class="stat-item">
+            <span class="stat-number">98%</span>
+            <span class="stat-label">Clientes satisfechos</span>
+          </div>
+
+        </div><!-- fin stats-grid -->
+
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------------
+         SECCIÓN CTA FINAL
+         Llamada a la acción con 2 botones para contacto y carta.
+         --------------------------------------------------------------- -->
+    <section class="section section-cream text-center" aria-label="Llamada a la acción">
+      <div class="container">
+        <h2>¿Listo para una experiencia gastronómica?</h2>
+        <div class="divider"></div>
+        <p style="color:var(--text-muted); font-size:1.1rem; max-width:600px; margin:0 auto 2rem;">
+          Reserva tu mesa y déjate sorprender por los sabores auténticos del Mediterráneo.
+          ¡Te esperamos!
+        </p>
+        <div class="hero-buttons">
+          <a href="contacto.html" class="btn btn-primary">Hacer una Reserva</a>
+          <a href="carta.html" class="btn btn-outline-dark">Ver la Carta</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================================================================
+       PIE DE PÁGINA / FOOTER
+       Cuadrícula de 4 columnas: marca, navegación, legal, horarios.
+       =================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+
+      <!-- Grid del footer: 4 columnas -->
+      <div class="footer-grid">
+
+        <!-- Columna 1: Marca y descripción -->
+        <div class="footer-col">
+          <span class="footer-logo-name">El Rincón del Mar</span>
+          <span class="footer-logo-tagline">Restaurante Mediterráneo</span>
+          <p>Cocina mediterránea auténtica en el corazón de Barcelona desde 1998. Producto fresco, tradición y pasión en cada plato.</p>
+          <p style="margin-top:0.75rem; font-size:0.85rem;">
+            <a href="mailto:info@elrincondelmar.es" style="color:var(--secondary);">info@elrincondelmar.es</a><br>
+            <a href="tel:+34931234567" style="color:rgba(255,255,255,0.7);">+34 93 123 45 67</a>
+          </p>
+        </div>
+
+        <!-- Columna 2: Navegación -->
+        <nav class="footer-col" aria-label="Navegación del footer">
+          <h3>Navegación</h3>
+          <ul class="footer-nav">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="carta.html">La Carta</a></li>
+            <li><a href="nosotros.html">Sobre Nosotros</a></li>
+            <li><a href="contacto.html">Contacto y Reservas</a></li>
+          </ul>
+        </nav>
+
+        <!-- Columna 3: Legal -->
+        <nav class="footer-col" aria-label="Páginas legales">
+          <h3>Legal</h3>
+          <ul class="footer-nav">
+            <li><a href="privacidad.html">Política de Privacidad</a></li>
+            <li><a href="privacidad.html#cookies">Política de Cookies</a></li>
+            <li><a href="privacidad.html#aviso-legal">Aviso Legal</a></li>
+          </ul>
+        </nav>
+
+        <!-- Columna 4: Horarios y dirección -->
+        <div class="footer-col">
+          <h3>Horarios y Ubicación</h3>
+          <div class="footer-hours">
+            <p><strong>Martes – Viernes</strong><br>13:00 – 16:00 &amp; 20:00 – 23:00</p>
+            <p><strong>Sábado – Domingo</strong><br>12:30 – 16:30 &amp; 20:00 – 23:30</p>
+            <p><strong style="color:#e74c3c;">Lunes: Cerrado</strong></p>
+          </div>
+          <address style="font-style:normal; margin-top:1rem; font-size:0.88rem; color:rgba(255,255,255,0.65);">
+            Carrer de la Marina, 45<br>
+            08005 Barcelona
+          </address>
+        </div>
+
+      </div><!-- fin footer-grid -->
+
+      <!-- Línea inferior del footer -->
+      <div class="footer-bottom">
+        <p>&copy; 2025 El Rincón del Mar. Todos los derechos reservados.</p>
+        <nav class="footer-legal" aria-label="Páginas legales secundarias">
+          <a href="privacidad.html">Privacidad</a>
+          <a href="privacidad.html#cookies">Cookies</a>
+          <a href="privacidad.html#aviso-legal">Aviso Legal</a>
+        </nav>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ===================================================================
+       BANNER DE COOKIES (CSS-only)
+       DEBE ser el ÚLTIMO elemento antes de </body>.
+       El input#cookie-close al inicio del body actúa como hermano (~)
+       de este div gracias al selector CSS: .cookie-checkbox:checked ~ .cookie-banner
+       =================================================================== -->
+  <div class="cookie-banner" role="dialog" aria-label="Aviso de cookies" aria-live="polite">
+    <p>
+      Utilizamos cookies propias y de terceros para mejorar tu experiencia de navegación
+      y analizar el tráfico de nuestra web. Puedes obtener más información en nuestra
+      <a href="privacidad.html#cookies">política de cookies</a>.
+    </p>
+    <!-- La etiqueta apunta al input#cookie-close del inicio del body -->
+    <label for="cookie-close" class="cookie-btn">Aceptar cookies</label>
+  </div>
+
+</body>
+</html>

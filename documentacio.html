@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Documentación técnica del proyecto web El Rincón del Mar: justificación de la temática, metadatos, semántica HTML5 y recursos de herramientas.">
+  <meta name="author" content="Adrian Pasacrella - DAM1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Documentació del Projecte | El Rincón del Mar</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Cookie banner -->
+  <input type="checkbox" id="cookie-close" class="cookie-checkbox">
+
+  <!-- ===================================================================
+       CABECERA / HEADER
+       =================================================================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="El Rincón del Mar - Ir a inicio">
+        <span class="logo-name">El Rincón del Mar</span>
+        <span class="logo-tagline">Restaurante Mediterráneo · Barcelona</span>
+      </a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <nav class="site-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="carta.html">La Carta</a></li>
+          <li><a href="nosotros.html">Sobre Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Page hero -->
+    <section class="page-hero" aria-label="Documentación del proyecto">
+      <div class="container">
+        <p class="breadcrumb">Inicio &rsaquo; Documentació</p>
+        <h1>Documentació del Projecte</h1>
+        <p>Justificació de la temàtica, metadades, semàntica i recursos utilitzats</p>
+      </div>
+    </section>
+
+    <div class="section">
+      <div class="container">
+
+        <!-- ---------------------------------------------------------------
+             1. CONTEXTUALITZACIÓ / JUSTIFICACIÓ DE LA TRIA
+             --------------------------------------------------------------- -->
+        <article class="doc-block" id="contextualitzacio">
+
+          <h2>1. Contextualització i Justificació de la Temàtica</h2>
+          <div class="divider divider-left"></div>
+
+          <p>
+            Per a aquest projecte s'ha triat un <strong>restaurant de cuina mediterrània</strong>
+            anomenat <em>El Rincón del Mar</em>, ubicat a Barcelona. Aquesta elecció es justifica
+            pels motius següents:
+          </p>
+
+          <ol class="doc-list">
+            <li>
+              <strong>Riquesa de continguts:</strong> un restaurant permet incloure de manera
+              natural tots els elements obligatoris del projecte: taules de preus (amb colspan i
+              rowspan), llistes de plats amb subcategories (vins, postres, etc.), formulari de
+              reserva, galeria d'imatges i vídeo de cuina.
+            </li>
+            <li>
+              <strong>Aplicabilitat real:</strong> els restaurants són un dels sectors que més
+              necessiten presència digital. Una web clara, atractiva i responsive pot significar
+              un increment real de clients i reserves.
+            </li>
+            <li>
+              <strong>Schema.org adequat:</strong> el tipus <code>Restaurant</code> de Schema.org
+              és un dels esquemes més ben documentats i facilita la indexació de dades estructurades
+              com horaris, adreça, carta i reserves als motors de cerca com Google.
+            </li>
+            <li>
+              <strong>LOPD/RGPD aplicable:</strong> un formulari de reserva requereix el tractament
+              de dades personals (nom, email, telèfon), cosa que fa obligatòria la implementació
+              de la política de privadesa, el consentiment explícit i l'avís de cookies.
+            </li>
+          </ol>
+
+          <p>
+            El restaurant és un projecte <strong>completament fictici</strong>, creat específicament
+            per a aquesta pràctica. El nom, la direcció, el telèfon, el personal i tots els continguts
+            són inventats.
+          </p>
+
+        </article>
+
+        <hr class="doc-separator">
+
+        <!-- ---------------------------------------------------------------
+             2. JUSTIFICACIÓ DE LES METADADES
+             --------------------------------------------------------------- -->
+        <article class="doc-block" id="metadades">
+
+          <h2>2. Metadades: Justificació i Recursos</h2>
+          <div class="divider divider-left"></div>
+
+          <h3>2.1 Metadades utilitzades i justificació</h3>
+
+          <div class="table-wrap">
+            <table>
+              <caption>Metadades implementades i justificació de cada una</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Metaetiqueta</th>
+                  <th scope="col">Valor exemple</th>
+                  <th scope="col">Justificació</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>charset="UTF-8"</code></td>
+                  <td>UTF-8</td>
+                  <td>Permet codificar accents, símbols i caràcters especials en català i castellà</td>
+                </tr>
+                <tr>
+                  <td><code>meta viewport</code></td>
+                  <td>width=device-width, initial-scale=1.0</td>
+                  <td>Imprescindible per al disseny responsive: sense aquesta etiqueta el mòbil mostra la web com a escriptori</td>
+                </tr>
+                <tr>
+                  <td><code>meta description</code></td>
+                  <td>"Restaurante mediterráneo en Barcelona..."</td>
+                  <td>El text que mostren Google i altres cercadors a la llista de resultats (SERP). Influeix en el CTR (Click-Through Rate)</td>
+                </tr>
+                <tr>
+                  <td><code>meta keywords</code></td>
+                  <td>"paella Barcelona, restaurante mediterráneo..."</td>
+                  <td>Paraules clau temàtiques. Avui Google les ignora per a posicionament però altres cercadors (Bing) encara les consideren</td>
+                </tr>
+                <tr>
+                  <td><code>meta author</code></td>
+                  <td>El Rincón del Mar</td>
+                  <td>Identifica el propietari/autor del contingut per a cercadors i lectors de pantalla</td>
+                </tr>
+                <tr>
+                  <td><code>meta robots</code></td>
+                  <td>index, follow</td>
+                  <td>Autoritza als robots de Google que indexin la pàgina i segueixin els seus enllaços. La pàgina legal porta "noindex" per no contaminar els resultats de cerca</td>
+                </tr>
+                <tr>
+                  <td><code>og:title</code></td>
+                  <td>"El Rincón del Mar | Restaurante..."</td>
+                  <td>Open Graph: títol que apareix quan es comparteix la URL a xarxes socials (Facebook, LinkedIn, WhatsApp)</td>
+                </tr>
+                <tr>
+                  <td><code>og:description</code></td>
+                  <td>"Cocina mediterránea auténtica..."</td>
+                  <td>Descripció per a xarxes socials. Diferent de la meta description per adaptar-se al format visual de les targetes socials</td>
+                </tr>
+                <tr>
+                  <td><code>og:image</code></td>
+                  <td>URL imatge 1200×630px</td>
+                  <td>Imatge que apareix a la previsualització de la URL en xarxes. Recomanat 1200×630px per a cobertura òptima</td>
+                </tr>
+                <tr>
+                  <td><code>og:type</code></td>
+                  <td>restaurant / website</td>
+                  <td>Tipus de contingut Open Graph. Ajuda les plataformes socials a presentar la targeta amb el format correcte</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 style="margin-top:2.5rem;">2.2 Catàleg de recursos per a generació de metadades</h3>
+
+          <ul class="doc-resource-list">
+            <li>
+              <strong><a href="https://metatags.io" target="_blank" rel="noopener noreferrer">metatags.io</a></strong>
+              — Generador visual de metadades amb previsualització en temps real de com es veurà la pàgina a Google, Facebook i Twitter.
+            </li>
+            <li>
+              <strong><a href="https://www.seoptimer.com/meta-tag-generator" target="_blank" rel="noopener noreferrer">SEOptimer Meta Tag Generator</a></strong>
+              — Genera les metaetiquetes bàsiques SEO de manera guiada i les exporta en codi HTML llest per enganxar.
+            </li>
+            <li>
+              <strong><a href="https://developers.facebook.com/tools/debug/" target="_blank" rel="noopener noreferrer">Facebook Sharing Debugger</a></strong>
+              — Permet veure com es renderitza una URL quan es comparteix a Facebook i diagnosticar problemes amb les etiquetes Open Graph.
+            </li>
+            <li>
+              <strong><a href="https://cards-dev.twitter.com/validator" target="_blank" rel="noopener noreferrer">Twitter Card Validator</a></strong>
+              — Eina oficial de Twitter per validar les metadades og/twitter i veure la previsualització de la targeta.
+            </li>
+            <li>
+              <strong><a href="https://search.google.com/test/rich-results" target="_blank" rel="noopener noreferrer">Google Rich Results Test</a></strong>
+              — Comprova si les metadades estructurades (Schema.org JSON-LD) generen resultats enriquits a Google Search.
+            </li>
+          </ul>
+
+        </article>
+
+        <hr class="doc-separator">
+
+        <!-- ---------------------------------------------------------------
+             3. JUSTIFICACIÓ DE LA SEMÀNTICA
+             --------------------------------------------------------------- -->
+        <article class="doc-block" id="semantica">
+
+          <h2>3. Semàntica: Justificació i Aplicació</h2>
+          <div class="divider divider-left"></div>
+
+          <h3>3.1 HTML Semàntic: etiquetes triades i motiu</h3>
+
+          <p>
+            La semàntica HTML fa referència a l'ús d'etiquetes que descriguen el
+            <em>significat</em> del contingut, no sols la seva aparença. Un document semàntic
+            correcte beneficia:
+          </p>
+          <ul class="doc-bullet-list">
+            <li>Els <strong>motors de cerca</strong>: entenen millor l'estructura i jerarquia del contingut.</li>
+            <li>Els <strong>lectors de pantalla</strong> (accessibilitat): les persones amb discapacitat visual naveguen per les landmarks semàntiques.</li>
+            <li>El <strong>manteniment del codi</strong>: un programador que llegeixi el codi entén instantàniament per a què serveix cada bloc.</li>
+          </ul>
+
+          <div class="table-wrap" style="margin-top:1.5rem;">
+            <table>
+              <caption>Etiquetes semàntiques HTML5 usades i justificació</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Etiqueta</th>
+                  <th scope="col">Ús en el projecte</th>
+                  <th scope="col">Per què es fa servir</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>&lt;header&gt;</code></td>
+                  <td>Capçalera del lloc web (logo + navegació)</td>
+                  <td>Marca la zona introductòria del document. Els lectors de pantalla la reconeixen com a "banner" de la pàgina</td>
+                </tr>
+                <tr>
+                  <td><code>&lt;nav&gt;</code></td>
+                  <td>Menú de navegació principal i navegació del footer</td>
+                  <td>Identifica blocs de navegació. Permet als usuaris de lector de pantalla saltar directament a la navegació o ignorar-la</td>
+                </tr>
+                <tr>
+                  <td><code>&lt;main&gt;</code></td>
+                  <td>Contingut principal de cada pàgina</td>
+                  <td>Ha de ser únic per pàgina. Permet als lectors de pantalla saltar directament al contingut principal ("skip to main content")</td>
+                </tr>
+                <tr>
+                  <td><code>&lt;section&gt;</code></td>
+                  <td>Cada bloc temàtic: hero, especialitats, vídeo, menú, equip, etc.</td>
+                  <td>Agrupa contingut relacionat temàticament. Ha de tenir sempre un títol (h2, h3...) per ser semànticament correcta</td>
+                </tr>
+                <tr>
+                  <td><code>&lt;article&gt;</code></td>
+                  <td>Cada targeta de plat, cada targeta de l'equip, cada valor</td>
+                  <td>Contingut independent i autosuficient que podria existir fora de context. Cada plat del menú és un article en si mateix</td>
+                </tr>
+                <tr>
+                  <td><code>&lt;aside&gt;</code></td>
+                  <td>Nota del chef (carta.html), informació de contacte (contacto.html)</td>
+                  <td>Contingut relacionat però no essencial per al contingut principal. Pot ser una barra lateral o una nota</td>
+                </tr>
+                <tr>
+                  <td><code>&lt;footer&gt;</code></td>
+                  <td>Peu de pàgina amb links, horaris i informació legal</td>
+                  <td>Marca la zona de peu. Conté informació complementària, legal i de contacte secundari</td>
+                </tr>
+                <tr>
+                  <td><code>&lt;figure&gt;</code> + <code>&lt;figcaption&gt;</code></td>
+                  <td>Galeria d'imatges (nosotros.html), imatge de benvinguda (index.html)</td>
+                  <td>Agrupa una imatge amb la seva llegenda descriptiva. Correcte per a imatges amb context explicatiu</td>
+                </tr>
+                <tr>
+                  <td><code>&lt;address&gt;</code></td>
+                  <td>Adreça del restaurant al footer i pàgina de contacte</td>
+                  <td>Etiqueta específica per a dades de contacte. Els cercadors l'interpreten com a informació de contacte de l'autor/propietari</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 style="margin-top:2.5rem;">3.2 Schema.org — Dades Estructurades</h3>
+
+          <p>
+            A <code>index.html</code> s'ha implementat el tipus <strong>Restaurant</strong>
+            de Schema.org mitjançant un bloc <code>&lt;script type="application/ld+json"&gt;</code>.
+            Aquesta etiqueta és <strong>metadata HTML, no JavaScript</strong>: el navegador no
+            l'executa, simplement la llegeix Google i altres motors de cerca per entendre millor
+            el contingut.
+          </p>
+
+          <p>L'esquema <code>Restaurant</code> s'ha triat perquè:</p>
+          <ul class="doc-bullet-list">
+            <li>Permet declarar <strong>horaris d'apertura</strong> que Google pot mostrar directament als resultats de cerca.</li>
+            <li>Permite mostrar l'<strong>adreça i coordenades</strong> per a Google Maps i panells de coneixement.</li>
+            <li>Declara la <strong>cuina servida</strong> (<em>servesCuisine</em>), el <strong>rang de preus</strong> i si <strong>accepta reserves</strong>.</li>
+            <li>Pot generar <strong>Rich Snippets</strong> als resultats de Google, millorant la visibilitat i el CTR.</li>
+          </ul>
+
+          <p>
+            <strong>Recursos per testar Schema.org:</strong>
+          </p>
+          <ul class="doc-resource-list">
+            <li>
+              <strong><a href="https://search.google.com/structured-data/testing-tool?hl=es" target="_blank" rel="noopener noreferrer">Google Structured Data Testing Tool</a></strong>
+              — Eina oficial de Google per validar i previsualitzar els Rich Snippets.
+            </li>
+            <li>
+              <strong><a href="https://technicalseo.com/tools/schema-markup-generator/" target="_blank" rel="noopener noreferrer">Schema Markup Generator (TechnicalSEO.com)</a></strong>
+              — Generador visual de JSON-LD per a tots els tipus de Schema.org.
+            </li>
+            <li>
+              <strong><a href="https://schema.org/Restaurant" target="_blank" rel="noopener noreferrer">Schema.org/Restaurant</a></strong>
+              — Documentació oficial del tipus Restaurant amb tots els camps disponibles.
+            </li>
+          </ul>
+
+        </article>
+
+        <hr class="doc-separator">
+
+        <!-- ---------------------------------------------------------------
+             4. CATÀLEG D'EINES DE PROTOTIPAT
+             --------------------------------------------------------------- -->
+        <article class="doc-block" id="prototipat">
+
+          <h2>4. Catàleg d'Eines de Prototipat</h2>
+          <div class="divider divider-left"></div>
+
+          <p>
+            El prototipat és la fase prèvia a la codificació en la qual es dissenya l'estructura
+            visual de la pàgina web (wireframes i mockups). Permet detectar problemes de disseny
+            i distribució de continguts abans d'escriure una sola línia de codi.
+          </p>
+          <p>
+            Podeu veure el prototipat d'aquest projecte a:
+            <a href="prototipat/prototipat.html">prototipat/prototipat.html</a>
+          </p>
+
+          <div class="tools-grid">
+
+            <div class="tool-card">
+              <h3><a href="https://www.figma.com" target="_blank" rel="noopener noreferrer">Figma</a></h3>
+              <p><strong>Tipus:</strong> Eina professional col·laborativa (web i escriptori)</p>
+              <p><strong>Punts forts:</strong> Gratuïta per a ús individual. Col·laboració en temps real. Components reutilitzables. Prototips interactius. Exportació a PNG/PDF.</p>
+              <p><strong>Ideal per a:</strong> projectes professionals, equips, presentacions d'alta qualitat.</p>
+            </div>
+
+            <div class="tool-card">
+              <h3><a href="https://balsamiq.com" target="_blank" rel="noopener noreferrer">Balsamiq</a></h3>
+              <p><strong>Tipus:</strong> Eina específica per a wireframes d'esboç (sketchstyle)</p>
+              <p><strong>Punts forts:</strong> Molt ràpid per a prototips d'estructura. Estètica deliberadament "esborrador" per evitar discussions de disseny prematures. Exporta a PDF.</p>
+              <p><strong>Ideal per a:</strong> fases inicials de disseny, comunicar l'estructura sense detalls visuals.</p>
+            </div>
+
+            <div class="tool-card">
+              <h3><a href="https://wireframe.cc" target="_blank" rel="noopener noreferrer">Wireframe.cc</a></h3>
+              <p><strong>Tipus:</strong> Eina web minimalista i gratuïta</p>
+              <p><strong>Punts forts:</strong> Sense registre per a ús bàsic. Molt senzilla d'aprendre. Exporta a PNG. Bona per a wireframes simples d'una sola pàgina.</p>
+              <p><strong>Ideal per a:</strong> prototips ràpids, estudiants, projectes simples.</p>
+            </div>
+
+            <div class="tool-card">
+              <h3><a href="https://www.adobe.com/es/products/xd.html" target="_blank" rel="noopener noreferrer">Adobe XD</a></h3>
+              <p><strong>Tipus:</strong> Eina professional d'Adobe (web i escriptori)</p>
+              <p><strong>Punts forts:</strong> Integració amb Adobe Creative Cloud (Photoshop, Illustrator). Prototips interactius. Recursos d'interfície incorporats.</p>
+              <p><strong>Ideal per a:</strong> professionals que ja usen l'ecosistema Adobe.</p>
+            </div>
+
+            <div class="tool-card">
+              <h3><a href="https://pencil.evolus.vn" target="_blank" rel="noopener noreferrer">Pencil Project</a></h3>
+              <p><strong>Tipus:</strong> Eina d'escriptori gratuïta i de codi obert</p>
+              <p><strong>Punts forts:</strong> 100% gratuïta i sense limitacions. No requereix connexió a Internet. Exporta a HTML, PDF, PNG.</p>
+              <p><strong>Ideal per a:</strong> entorns sense accés estable a Internet, ús educatiu.</p>
+            </div>
+
+          </div>
+
+        </article>
+
+        <hr class="doc-separator">
+
+        <!-- ---------------------------------------------------------------
+             5. RESUM DE SELECTORS CSS BÀSICS USATS
+             --------------------------------------------------------------- -->
+        <article class="doc-block" id="selectors">
+
+          <h2>5. Selectors CSS Bàsics Usats al Projecte</h2>
+          <div class="divider divider-left"></div>
+
+          <p>El full d'estils <code>css/styles.css</code> utilitza els selectors bàsics següents:</p>
+
+          <div class="table-wrap">
+            <table>
+              <caption>Selectors CSS bàsics implementats</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Tipus de selector</th>
+                  <th scope="col">Exemple del projecte</th>
+                  <th scope="col">Descripció</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Selector d'element</td>
+                  <td><code>h1, h2, body, img, a</code></td>
+                  <td>Selecciona tots els elements d'un tipus HTML determinat</td>
+                </tr>
+                <tr>
+                  <td>Selector de classe</td>
+                  <td><code>.container, .btn, .card, .section</code></td>
+                  <td>Selecciona els elements que tenen l'atribut <code>class</code> indicat</td>
+                </tr>
+                <tr>
+                  <td>Selector universal</td>
+                  <td><code>*, *::before, *::after</code></td>
+                  <td>Selecciona tots els elements del document (usat al reset CSS)</td>
+                </tr>
+                <tr>
+                  <td>Selector descendent</td>
+                  <td><code>.site-nav ul li a</code></td>
+                  <td>Selecciona elements continguts dins d'altres (relació pare-fill)</td>
+                </tr>
+                <tr>
+                  <td>Selector de germans generals</td>
+                  <td><code>.cookie-checkbox:checked ~ .cookie-banner</code></td>
+                  <td>Selecciona germans posteriors. S'usa per al banner de cookies i el menú hamburguesa (sense JavaScript)</td>
+                </tr>
+                <tr>
+                  <td>Pseudo-classe d'estat</td>
+                  <td><code>a:hover, input:focus-visible</code></td>
+                  <td>Aplica estils quan l'element té un estat concret (ratoli a sobre, focus de teclat)</td>
+                </tr>
+                <tr>
+                  <td>Pseudo-classe estructural</td>
+                  <td><code>tr:nth-child(even)</code></td>
+                  <td>Selecciona files parelles de les taules per al color de fons alternat (zebra)</td>
+                </tr>
+                <tr>
+                  <td>Pseudo-element</td>
+                  <td><code>*::before, *::after</code></td>
+                  <td>Selecciona contingut generat per CSS anterior o posterior a l'element</td>
+                </tr>
+                <tr>
+                  <td>Pseudo-classe de formulari</td>
+                  <td><code>input:checked</code></td>
+                  <td>Selecciona els inputs marcats (checkboxes). S'usa per activar el menú hamburguesa i tancar el banner de cookies</td>
+                </tr>
+                <tr>
+                  <td>Variables CSS (<code>:root</code>)</td>
+                  <td><code>:root { --primary: #1a5276; }</code></td>
+                  <td>Defineix variables de CSS (Custom Properties) accessibles des de tot el document</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </article>
+
+      </div><!-- fin container -->
+    </div>
+
+  </main>
+
+  <!-- ===================================================================
+       PIE DE PÁGINA / FOOTER
+       =================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <span class="footer-logo-name">El Rincón del Mar</span>
+          <span class="footer-logo-tagline">Restaurante Mediterráneo</span>
+          <p>Cocina mediterránea auténtica en el corazón de Barcelona desde 1998.</p>
+        </div>
+        <nav class="footer-col" aria-label="Navegación del footer">
+          <h3>Navegación</h3>
+          <ul class="footer-nav">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="carta.html">La Carta</a></li>
+            <li><a href="nosotros.html">Sobre Nosotros</a></li>
+            <li><a href="contacto.html">Contacto y Reservas</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Páginas legales">
+          <h3>Legal</h3>
+          <ul class="footer-nav">
+            <li><a href="privacidad.html">Política de Privacidad</a></li>
+            <li><a href="privacidad.html#cookies">Política de Cookies</a></li>
+            <li><a href="privacidad.html#aviso-legal">Aviso Legal</a></li>
+          </ul>
+        </nav>
+        <div class="footer-col">
+          <h3>Documentació Tècnica</h3>
+          <ul class="footer-nav">
+            <li><a href="documentacio.html#contextualitzacio">Justificació temàtica</a></li>
+            <li><a href="documentacio.html#metadades">Metadades</a></li>
+            <li><a href="documentacio.html#semantica">Semàntica</a></li>
+            <li><a href="documentacio.html#prototipat">Eines prototipat</a></li>
+            <li><a href="prototipat/prototipat.html">Prototipat visual</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 El Rincón del Mar. Todos los derechos reservados.</p>
+        <nav class="footer-legal" aria-label="Legal">
+          <a href="privacidad.html">Privacidad</a>
+          <a href="privacidad.html#cookies">Cookies</a>
+          <a href="privacidad.html#aviso-legal">Aviso Legal</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" role="dialog" aria-label="Aviso de cookies" aria-live="polite">
+    <p>
+      Utilizamos cookies propias y de terceros para mejorar tu experiencia de navegación.
+      Puedes obtener más información en nuestra
+      <a href="privacidad.html#cookies">política de cookies</a>.
+    </p>
+    <label for="cookie-close" class="cookie-btn">Aceptar cookies</label>
+  </div>
+
+</body>
+</html>

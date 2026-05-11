@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Codificación de caracteres -->
+  <meta charset="UTF-8">
+  <!-- Viewport para diseño responsivo -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO: Metaetiquetas -->
+  <meta name="description" content="Contacta con El Rincón del Mar y realiza tu reserva online. Restaurante mediterráneo en Carrer de la Marina, 45, Barcelona. Tel: +34 93 123 45 67.">
+  <meta name="keywords" content="reserva restaurante Barcelona, contacto El Rincón del Mar, mesa Barceloneta, reserva online Barcelona, horario restaurante mediterráneo">
+  <meta name="author" content="El Rincón del Mar">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contacto y Reservas | El Rincón del Mar">
+  <meta property="og:description" content="Reserva tu mesa en El Rincón del Mar. Restaurante mediterráneo en Barcelona. Contacto y formulario de reservas online.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80">
+  <meta property="og:url" content="https://www.elrincondelmar.es/contacto.html">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="El Rincón del Mar">
+
+  <title>Contacto y Reservas | El Rincón del Mar</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Cookie: el input DEBE ser el PRIMER hijo del body -->
+  <input type="checkbox" id="cookie-close" class="cookie-checkbox">
+
+  <!-- ===================================================================
+       CABECERA / HEADER
+       =================================================================== -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- Logo -->
+      <a href="index.html" class="logo" aria-label="El Rincón del Mar - Ir a inicio">
+        <span class="logo-name">El Rincón del Mar</span>
+        <span class="logo-tagline">Restaurante Mediterráneo · Barcelona</span>
+      </a>
+
+      <!-- Input checkbox para el menú hamburguesa -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+
+      <!-- Hamburger: 3 barras -->
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <!-- Navegación - "Contacto" activo -->
+      <nav class="site-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="carta.html">La Carta</a></li>
+          <li><a href="nosotros.html">Sobre Nosotros</a></li>
+          <li><a href="contacto.html" class="active" aria-current="page">Contacto</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ===================================================================
+       CONTENIDO PRINCIPAL
+       =================================================================== -->
+  <main>
+
+    <!-- ---------------------------------------------------------------
+         PAGE HERO
+         --------------------------------------------------------------- -->
+    <section class="page-hero" aria-label="Cabecera contacto">
+      <div class="container">
+        <p class="breadcrumb">Inicio &rsaquo; Contacto</p>
+        <h1>Contacto y Reservas</h1>
+        <p>¿Quieres reservar una mesa o tienes alguna pregunta? Estamos aquí para ayudarte</p>
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------------
+         SECCIÓN PRINCIPAL: FORMULARIO + INFORMACIÓN
+         Grid de 2 columnas: formulario (izquierda) e info (derecha).
+         --------------------------------------------------------------- -->
+    <section class="section" aria-labelledby="reserva-heading">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- =========================================================
+               COLUMNA IZQUIERDA: FORMULARIO DE RESERVA / CONTACTO
+               Formulario completo con consentimientos RGPD.
+               ========================================================= -->
+          <div>
+            <h2 id="reserva-heading">Reservar una Mesa</h2>
+            <div class="divider divider-left"></div>
+            <p style="color:var(--text-muted); margin-bottom:2rem;">
+              Rellena el formulario y te confirmaremos la disponibilidad en menos de 24 horas.
+              También puedes llamarnos directamente al <a href="tel:+34931234567"><strong>+34 93 123 45 67</strong></a>.
+            </p>
+
+            <!-- Formulario de reserva con validación HTML5 y conformidad RGPD -->
+            <form action="#" method="post" novalidate aria-label="Formulario de reserva">
+
+              <!-- Nombre y Apellidos (2 columnas en escritorio) -->
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="nombre">Nombre <span aria-hidden="true" style="color:red;">*</span></label>
+                  <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    placeholder="Tu nombre"
+                    required
+                    autocomplete="given-name"
+
+                  >
+                </div>
+                <div class="form-group">
+                  <label for="apellidos">Apellidos <span aria-hidden="true" style="color:red;">*</span></label>
+                  <input
+                    type="text"
+                    id="apellidos"
+                    name="apellidos"
+                    placeholder="Tus apellidos"
+                    required
+                    autocomplete="family-name"
+
+                  >
+                </div>
+              </div><!-- fin form-grid nombre/apellidos -->
+
+              <!-- Email y Teléfono (2 columnas) -->
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="email">Email <span aria-hidden="true" style="color:red;">*</span></label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="tu@email.com"
+                    required
+                    autocomplete="email"
+
+                  >
+                </div>
+                <div class="form-group">
+                  <label for="telefono">Teléfono</label>
+                  <input
+                    type="tel"
+                    id="telefono"
+                    name="telefono"
+                    placeholder="+34 600 000 000"
+                    autocomplete="tel"
+                  >
+                </div>
+              </div><!-- fin form-grid email/telefono -->
+
+              <!-- Número de personas -->
+              <div class="form-group">
+                <label for="personas">Número de personas <span aria-hidden="true" style="color:red;">*</span></label>
+                <select id="personas" name="personas" required>
+                  <option value="" disabled selected>Selecciona el número de comensales</option>
+                  <option value="1-2">1-2 personas</option>
+                  <option value="3-4">3-4 personas</option>
+                  <option value="5-8">5-8 personas</option>
+                  <option value="9+">9 o más personas (grupo)</option>
+                </select>
+              </div>
+
+              <!-- Fecha y hora (2 columnas) -->
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="fecha">Fecha de reserva <span aria-hidden="true" style="color:red;">*</span></label>
+                  <input
+                    type="date"
+                    id="fecha"
+                    name="fecha"
+                    required
+
+                    min="2025-01-01"
+                  >
+                </div>
+                <div class="form-group">
+                  <label for="hora">Hora <span aria-hidden="true" style="color:red;">*</span></label>
+                  <select id="hora" name="hora" required>
+                    <option value="" disabled selected>Selecciona la hora</option>
+                    <option value="13:00">13:00 h (Comida)</option>
+                    <option value="14:00">14:00 h (Comida)</option>
+                    <option value="20:00">20:00 h (Cena)</option>
+                    <option value="21:00">21:00 h (Cena)</option>
+                    <option value="22:00">22:00 h (Cena)</option>
+                  </select>
+                </div>
+              </div><!-- fin form-grid fecha/hora -->
+
+              <!-- Mensaje / Peticiones especiales -->
+              <div class="form-group">
+                <label for="mensaje">Mensaje o peticiones especiales</label>
+                <textarea
+                  id="mensaje"
+                  name="mensaje"
+                  placeholder="Alergias, intolerancias, celebraciones especiales, peticiones de menú..."
+                  aria-label="Mensaje o peticiones especiales"
+                ></textarea>
+              </div>
+
+              <!-- CONSENTIMIENTO RGPD (obligatorio) -->
+              <div class="form-check">
+                <input
+                  type="checkbox"
+                  id="rgpd"
+                  name="rgpd"
+                  required
+
+                >
+                <label for="rgpd">
+                  He leído y acepto la
+                  <a href="privacidad.html">Política de Privacidad</a>
+                  y consiento el tratamiento de mis datos personales para gestionar
+                  mi reserva. <strong>(Obligatorio)</strong>
+                </label>
+              </div>
+
+              <!-- CONSENTIMIENTO NEWSLETTER (opcional) -->
+              <div class="form-check">
+                <input
+                  type="checkbox"
+                  id="newsletter"
+                  name="newsletter"
+                >
+                <label for="newsletter">
+                  Deseo recibir información sobre promociones y novedades del restaurante.
+                  <strong>(Opcional)</strong>
+                </label>
+              </div>
+
+              <!-- Botón de envío -->
+              <button type="submit" class="btn btn-primary">Enviar reserva</button>
+
+              <!-- Información RGPD resumida -->
+              <p style="font-size:0.8rem; color:var(--text-muted); margin-top:1rem; line-height:1.5;">
+                De acuerdo con el RGPD (UE) 2016/679 y la LOPDGDD 3/2018, sus datos serán
+                tratados por <strong>El Rincón del Mar</strong> (NIF B12345678) con la
+                finalidad de gestionar su reserva y, si lo consiente, enviarle comunicaciones
+                comerciales. Puede ejercer sus derechos de acceso, rectificación, supresión,
+                oposición, portabilidad y limitación escribiendo a
+                <a href="mailto:info@elrincondelmar.es">info@elrincondelmar.es</a>.
+                <a href="privacidad.html">Más información</a>
+              </p>
+
+            </form>
+
+          </div><!-- fin columna formulario -->
+
+          <!-- =========================================================
+               COLUMNA DERECHA: INFORMACIÓN DE CONTACTO
+               ========================================================= -->
+          <aside class="contact-info" aria-label="Información de contacto">
+
+            <h3>Información de Contacto</h3>
+
+            <!-- Dirección -->
+            <div class="contact-detail">
+              <span class="contact-icon" aria-hidden="true">📍</span>
+              <address style="font-style:normal;">
+                <strong>Dirección</strong><br>
+                Carrer de la Marina, 45<br>
+                08005 Barcelona
+              </address>
+            </div>
+
+            <!-- Teléfono -->
+            <div class="contact-detail">
+              <span class="contact-icon" aria-hidden="true">📞</span>
+              <div>
+                <strong>Teléfono</strong><br>
+                <a href="tel:+34931234567">+34 93 123 45 67</a>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="contact-detail">
+              <span class="contact-icon" aria-hidden="true">✉️</span>
+              <div>
+                <strong>Email</strong><br>
+                <a href="mailto:info@elrincondelmar.es">info@elrincondelmar.es</a>
+              </div>
+            </div>
+
+            <!-- Horarios: tabla con colspan y rowspan -->
+            <h3 style="margin-top:2rem;">Horarios</h3>
+
+            <div class="table-wrap" style="margin-top:1rem;">
+              <table>
+                <thead>
+                  <!-- Fila 1 de cabecera: "Día" + "Horario" (colspan=2) -->
+                  <tr>
+                    <th scope="col">Día</th>
+                    <!-- colspan="2": esta celda abarca "Comida" y "Cena" -->
+                    <th scope="col" colspan="2">Horario</th>
+                  </tr>
+                  <!-- Fila 2 de cabecera: subdivisión de Horario -->
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Comida</th>
+                    <th scope="col">Cena</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Martes a Viernes -->
+                  <tr>
+                    <td><strong>Martes a Viernes</strong></td>
+                    <td>13:00 – 16:00</td>
+                    <td>20:00 – 23:00</td>
+                  </tr>
+                  <!-- Sábado y Domingo -->
+                  <tr>
+                    <td><strong>Sábado y Domingo</strong></td>
+                    <td>12:30 – 16:30</td>
+                    <td>20:00 – 23:30</td>
+                  </tr>
+                  <!-- Lunes cerrado: colspan="2" para abarcar comida y cena -->
+                  <tr>
+                    <td><strong>Lunes</strong></td>
+                    <td colspan="2" class="td-center">&#10007; Cerrado</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Nota de reservas -->
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-top:1rem;">
+              <strong>Nota:</strong> Se recomienda reservar con al menos 48h de antelación,
+              especialmente para fines de semana y grupos.
+            </p>
+
+            <!-- Mapa OpenStreetMap -->
+            <h3 style="margin-top:2rem;">Cómo Llegar</h3>
+            <div class="map-wrap">
+              <iframe
+                src="https://www.openstreetmap.org/export/embed.html?bbox=2.187%2C41.378%2C2.204%2C41.398&amp;layer=mapnik&amp;marker=41.3887%2C2.1958"
+                title="Ubicación de El Rincón del Mar en Carrer de la Marina, 45, Barcelona"
+                loading="lazy"
+                aria-label="Mapa de OpenStreetMap con la ubicación del restaurante"
+              ></iframe>
+            </div>
+
+            <!-- Enlace externo a Google Maps -->
+            <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:1rem;">
+              <a
+                href="https://www.google.com/maps/search/Carrer+de+la+Marina+45+Barcelona"
+                class="external-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Abrir en Google Maps (se abre en nueva pestaña)"
+              >
+                <span class="external-link-icon">🗺️</span>
+                Google Maps
+              </a>
+              <!-- Enlace externo a Waze -->
+              <a
+                href="https://waze.com/ul?q=Carrer+de+la+Marina+45+Barcelona"
+                class="external-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Abrir en Waze (se abre en nueva pestaña)"
+              >
+                <span class="external-link-icon">🚗</span>
+                Waze
+              </a>
+            </div>
+
+          </aside><!-- fin columna info -->
+
+        </div><!-- fin contact-grid -->
+      </div><!-- fin container -->
+    </section>
+
+  </main>
+
+  <!-- ===================================================================
+       PIE DE PÁGINA / FOOTER
+       =================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <!-- Columna 1: Marca -->
+        <div class="footer-col">
+          <span class="footer-logo-name">El Rincón del Mar</span>
+          <span class="footer-logo-tagline">Restaurante Mediterráneo</span>
+          <p>Cocina mediterránea auténtica en el corazón de Barcelona desde 1998.</p>
+          <p style="margin-top:0.75rem; font-size:0.85rem;">
+            <a href="mailto:info@elrincondelmar.es" style="color:var(--secondary);">info@elrincondelmar.es</a><br>
+            <a href="tel:+34931234567" style="color:rgba(255,255,255,0.7);">+34 93 123 45 67</a>
+          </p>
+        </div>
+
+        <!-- Columna 2: Navegación -->
+        <nav class="footer-col" aria-label="Navegación del footer">
+          <h3>Navegación</h3>
+          <ul class="footer-nav">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="carta.html">La Carta</a></li>
+            <li><a href="nosotros.html">Sobre Nosotros</a></li>
+            <li><a href="contacto.html">Contacto y Reservas</a></li>
+          </ul>
+        </nav>
+
+        <!-- Columna 3: Legal -->
+        <nav class="footer-col" aria-label="Páginas legales">
+          <h3>Legal</h3>
+          <ul class="footer-nav">
+            <li><a href="privacidad.html">Política de Privacidad</a></li>
+            <li><a href="privacidad.html#cookies">Política de Cookies</a></li>
+            <li><a href="privacidad.html#aviso-legal">Aviso Legal</a></li>
+          </ul>
+        </nav>
+
+        <!-- Columna 4: Horarios -->
+        <div class="footer-col">
+          <h3>Horarios y Ubicación</h3>
+          <div class="footer-hours">
+            <p><strong>Martes – Viernes</strong><br>13:00 – 16:00 &amp; 20:00 – 23:00</p>
+            <p><strong>Sábado – Domingo</strong><br>12:30 – 16:30 &amp; 20:00 – 23:30</p>
+            <p><strong style="color:#e74c3c;">Lunes: Cerrado</strong></p>
+          </div>
+          <address style="font-style:normal; margin-top:1rem; font-size:0.88rem; color:rgba(255,255,255,0.65);">
+            Carrer de la Marina, 45<br>08005 Barcelona
+          </address>
+        </div>
+
+      </div><!-- fin footer-grid -->
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 El Rincón del Mar. Todos los derechos reservados.</p>
+        <nav class="footer-legal" aria-label="Legal">
+          <a href="privacidad.html">Privacidad</a>
+          <a href="privacidad.html#cookies">Cookies</a>
+          <a href="privacidad.html#aviso-legal">Aviso Legal</a>
+        </nav>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ===================================================================
+       BANNER DE COOKIES (debe ser el último elemento antes de </body>)
+       =================================================================== -->
+  <div class="cookie-banner" role="dialog" aria-label="Aviso de cookies" aria-live="polite">
+    <p>
+      Utilizamos cookies propias y de terceros para mejorar tu experiencia de navegación.
+      Puedes obtener más información en nuestra
+      <a href="privacidad.html#cookies">política de cookies</a>.
+    </p>
+    <label for="cookie-close" class="cookie-btn">Aceptar cookies</label>
+  </div>
+
+</body>
+</html>

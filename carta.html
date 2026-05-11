@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Codificación de caracteres -->
+  <meta charset="UTF-8">
+  <!-- Viewport para diseño responsivo -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO: Metaetiquetas -->
+  <meta name="description" content="Carta y menú de El Rincón del Mar. Entrantes, pescados, arroces, fideuás, postres y bebidas. Menús para grupos y celebraciones en Barcelona.">
+  <meta name="keywords" content="carta restaurante Barcelona, menú mediterráneo, paella marinera precio, arroces Barcelona, mariscos Barcelona">
+  <meta name="author" content="El Rincón del Mar">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="La Carta | El Rincón del Mar">
+  <meta property="og:description" content="Descubre nuestra carta de cocina mediterránea: entrantes, pescados, arroces, postres y vinos seleccionados.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1534080564583-6be75777b70a?w=1200&q=80">
+  <meta property="og:url" content="https://www.elrincondelmar.es/carta.html">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="El Rincón del Mar">
+
+  <title>La Carta | El Rincón del Mar</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Cookie: el input DEBE ser el PRIMER hijo del body -->
+  <input type="checkbox" id="cookie-close" class="cookie-checkbox">
+
+  <!-- ===================================================================
+       CABECERA / HEADER (idéntica en todas las páginas)
+       =================================================================== -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- Logo -->
+      <a href="index.html" class="logo" aria-label="El Rincón del Mar - Ir a inicio">
+        <span class="logo-name">El Rincón del Mar</span>
+        <span class="logo-tagline">Restaurante Mediterráneo · Barcelona</span>
+      </a>
+
+      <!-- Input checkbox para el menú hamburguesa (CSS-only) -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+
+      <!-- Hamburger label con 3 spans -->
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <!-- Navegación - "La Carta" está activo en esta página -->
+      <nav class="site-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="carta.html" class="active" aria-current="page">La Carta</a></li>
+          <li><a href="nosotros.html">Sobre Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ===================================================================
+       CONTENIDO PRINCIPAL
+       =================================================================== -->
+  <main>
+
+    <!-- ---------------------------------------------------------------
+         PAGE HERO (interior)
+         Cabecera de página con fondo oscuro, más pequeño que el hero principal.
+         --------------------------------------------------------------- -->
+    <section class="page-hero" aria-label="Cabecera de la carta">
+      <div class="container">
+        <p class="breadcrumb">Inicio &rsaquo; La Carta</p>
+        <h1>Nuestra Carta</h1>
+        <p>Ingredientes frescos, recetas de temporada y tradición mediterránea en cada plato</p>
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------------
+         CONTENIDO DE LA CARTA
+         Organizado en secciones semánticas por categoría de plato.
+         --------------------------------------------------------------- -->
+    <section class="section" aria-label="Contenido de la carta">
+      <div class="container">
+
+        <!-- Nota del chef -->
+        <aside style="background:#f5f0e8; border-left:4px solid var(--secondary); padding:1.25rem 1.5rem; border-radius:0 var(--radius) var(--radius) 0; margin-bottom:3rem;">
+          <p style="margin:0; font-style:italic; color:var(--text-muted);">
+            <strong style="color:var(--primary);">Nota del Chef:</strong>
+            Todos nuestros platos se elaboran con productos frescos de temporada.
+            Infórmenos de posibles alergias o intolerancias. Los precios incluyen IVA.
+            Carta válida para la temporada 2025.
+          </p>
+        </aside>
+
+        <!-- -----------------------------------------------------------
+             ENTRANTES
+             -----------------------------------------------------------  -->
+        <section class="menu-section" aria-labelledby="entrantes-heading">
+          <h2 id="entrantes-heading">Entrantes</h2>
+
+          <ul class="menu-list">
+
+            <!-- Pan con tomate -->
+            <li>
+              <div class="menu-item">
+                <div>
+                  <span class="menu-item-name">Pan con tomate</span>
+                  <span class="menu-item-desc">Pan de coca tostado con tomate rallado, aceite de oliva virgen extra y sal marina</span>
+                </div>
+                <span class="menu-item-price">4 €</span>
+              </div>
+            </li>
+
+            <!-- Jamón ibérico -->
+            <li>
+              <div class="menu-item">
+                <div>
+                  <span class="menu-item-name">Jamón ibérico</span>
+                  <span class="menu-item-desc">Lonchas de jamón ibérico de bellota D.O. Guijuelo, cortado a mano</span>
+                </div>
+                <span class="menu-item-price">12 €</span>
+              </div>
+            </li>
+
+            <!-- Croquetas caseras -->
+            <li>
+              <div class="menu-item">
+                <div>
+                  <span class="menu-item-name">Croquetas caseras (6 ud.)</span>
+                  <span class="menu-item-desc">Croquetas cremosas de bacalao confitado con bechamel de leche fresca</span>
+                </div>
+                <span class="menu-item-price">8 €</span>
+              </div>
+            </li>
+
+            <!-- Gazpacho andaluz -->
+            <li>
+              <div class="menu-item">
+                <div>
+                  <span class="menu-item-name">Gazpacho andaluz</span>
+                  <span class="menu-item-desc">Gazpacho tradicional con tomate maduro, pepino, pimiento y aceite de oliva</span>
+                </div>
+                <span class="menu-item-price">6 €</span>
+              </div>
+            </li>
+
+            <!-- Tabla de quesos -->
+            <li>
+              <div class="menu-item">
+                <div>
+                  <span class="menu-item-name">Tabla de quesos</span>
+                  <span class="menu-item-desc">Selección de 5 quesos artesanos con mermelada de higos, nueces y pan crujiente</span>
+                </div>
+                <span class="menu-item-price">14 €</span>
+              </div>
+            </li>
+
+          </ul>
+        </section>
+
+        <!-- -----------------------------------------------------------
+             PRINCIPALES
+             -----------------------------------------------------------  -->
+        <section class="menu-section" aria-labelledby="principales-heading">
+          <h2 id="principales-heading">Principales</h2>
+
+          <ul class="menu-list">
+
+            <!-- Dorada a la sal -->
+            <li>
+              <div class="menu-item">
+                <div>
+                  <span class="menu-item-name">Dorada a la sal</span>
+                  <span class="menu-item-desc">Dorada fresca del Mediterráneo cocinada entera en costra de sal gruesa, servida con patatas panadera</span>
+                </div>
+                <span class="menu-item-price">22 €</span>
+              </div>
+            </li>
+
+            <!-- Lubina al horno -->
+            <li>
+              <div class="menu-item">
+                <div>
+                  <span class="menu-item-name">Lubina al horno</span>
+                  <span class="menu-item-desc">Lubina entera asada al horno con verduras de temporada, ajo, limón y aceite de oliva virgen extra</span>
+                </div>
+                <span class="menu-item-price">24 €</span>
+              </div>
+            </li>
+
+            <!-- Bacalao al pil-pil -->
+            <li>
+              <div class="menu-item">
+                <div>
+                  <span class="menu-item-name">Bacalao al pil-pil</span>
+                  <span class="menu-item-desc">Lomo de bacalao desalado con salsa pil-pil tradicional, guindilla y ajo confitado</span>
+                </div>
+                <span class="menu-item-price">20 €</span>
+              </div>
+            </li>
+
+          </ul>
+        </section>
+
+        <!-- -----------------------------------------------------------
+             ARROCES Y FIDEUÁS
+             -----------------------------------------------------------  -->
+        <section class="menu-section" aria-labelledby="arroces-heading">
+          <h2 id="arroces-heading">Arroces y Fideuás</h2>
+          <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.5rem;">
+            Mínimo 2 personas. Tiempo de elaboración: 25-30 minutos.
+          </p>
+
+          <ul class="menu-list">
+
+            <!-- Paella marinera -->
+            <li>
+              <div class="menu-item">
+                <div>
+                  <span class="menu-item-name">Paella marinera</span>
+                  <span class="menu-item-desc">Arroz bomba con gambas, mejillones, calamares, cigalas y caldo de pescado artesanal</span>
+                </div>
+                <span class="menu-item-price">18 €</span>
+              </div>
+            </li>
+
+            <!-- Arroz negro con sepia -->
+            <li>
+              <div class="menu-item">
+                <div>
+                  <span class="menu-item-name">Arroz negro con sepia</span>
+                  <span class="menu-item-desc">Arroz con tinta de calamar y sepia fresca, alioli casero aparte</span>
+                </div>
+                <span class="menu-item-price">17 €</span>
+              </div>
+            </li>
+
+            <!-- Fideuà de mariscos -->
+            <li>
+              <div class="menu-item">
+                <div>
+                  <span class="menu-item-name">Fideuà de mariscos</span>
+                  <span class="menu-item-desc">Fideos finos socarrats con marisco variado, caldo de rape y alioli de ajo negro</span>
+                </div>
+                <span class="menu-item-price">19 €</span>
+              </div>
+            </li>
+
+            <!-- Arroz a banda -->
+            <li>
+              <div class="menu-item">
+                <div>
+                  <span class="menu-item-name">Arroz a banda</span>
+                  <span class="menu-item-desc">Arroz cocinado en caldo concentrado de pescado y marisco, servido con alioli y acompañamiento de marisco aparte</span>
+                </div>
+                <span class="menu-item-price">16 €</span>
+              </div>
+            </li>
+
+          </ul>
+        </section>
+
+        <!-- -----------------------------------------------------------
+             POSTRES
+             -----------------------------------------------------------  -->
+        <section class="menu-section" aria-labelledby="postres-heading">
+          <h2 id="postres-heading">Postres</h2>
+
+          <ul class="menu-list">
+
+            <li>
+              <div class="menu-item">
+                <div>
+                  <span class="menu-item-name">Crema catalana</span>
+                  <span class="menu-item-desc">Crema suave de yema con costra de azúcar caramelizado, receta tradicional</span>
+                </div>
+                <span class="menu-item-price">5 €</span>
+              </div>
+            </li>
+
+            <li>
+              <div class="menu-item">
+                <div>
+                  <span class="menu-item-name">Tarta de Santiago</span>
+                  <span class="menu-item-desc">Tarta de almendra con azúcar glas y la cruz de Santiago</span>
+                </div>
+                <span class="menu-item-price">5 €</span>
+              </div>
+            </li>
+
+            <li>
+              <div class="menu-item">
+                <div>
+                  <span class="menu-item-name">Mousse de chocolate</span>
+                  <span class="menu-item-desc">Mousse esponjoso de chocolate negro 70% cacao con nata montada</span>
+                </div>
+                <span class="menu-item-price">5 €</span>
+              </div>
+            </li>
+
+            <li>
+              <div class="menu-item">
+                <div>
+                  <span class="menu-item-name">Flan casero</span>
+                  <span class="menu-item-desc">Flan de huevo artesanal con caramelo líquido y nata</span>
+                </div>
+                <span class="menu-item-price">4 €</span>
+              </div>
+            </li>
+
+            <li>
+              <div class="menu-item">
+                <div>
+                  <span class="menu-item-name">Sorbete de limón</span>
+                  <span class="menu-item-desc">Sorbete artesanal de limón de la Costa Brava con toque de cava</span>
+                </div>
+                <span class="menu-item-price">4 €</span>
+              </div>
+            </li>
+
+          </ul>
+        </section>
+
+        <!-- -----------------------------------------------------------
+             BEBIDAS (con sublistas para categorías de vino y bebidas)
+             -----------------------------------------------------------  -->
+        <section class="menu-section" aria-labelledby="bebidas-heading">
+          <h2 id="bebidas-heading">Bebidas</h2>
+
+          <!-- Lista con sublistas para organizar por categorías -->
+          <ul class="menu-list">
+
+            <!-- Categoría: Vinos blancos -->
+            <li>
+              <span class="menu-item-name">Vinos blancos</span>
+              <ul class="menu-sublist">
+                <li>
+                  <span>Albariño D.O. Rías Baixas</span>
+                  <span class="menu-item-price">18 €</span>
+                </li>
+                <li>
+                  <span>Verdejo D.O. Rueda</span>
+                  <span class="menu-item-price">16 €</span>
+                </li>
+                <li>
+                  <span>Chardonnay Catalunya</span>
+                  <span class="menu-item-price">15 €</span>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Categoría: Vinos tintos -->
+            <li>
+              <span class="menu-item-name">Vinos tintos</span>
+              <ul class="menu-sublist">
+                <li>
+                  <span>Rioja Crianza</span>
+                  <span class="menu-item-price">22 €</span>
+                </li>
+                <li>
+                  <span>Ribera del Duero</span>
+                  <span class="menu-item-price">25 €</span>
+                </li>
+                <li>
+                  <span>Priorat</span>
+                  <span class="menu-item-price">28 €</span>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Categoría: Cervezas y refrescos -->
+            <li>
+              <span class="menu-item-name">Cervezas</span>
+              <ul class="menu-sublist">
+                <li>
+                  <span>Estrella Damm</span>
+                  <span class="menu-item-price">3 €</span>
+                </li>
+                <li>
+                  <span>Moritz</span>
+                  <span class="menu-item-price">3 €</span>
+                </li>
+                <li>
+                  <span>Agua mineral</span>
+                  <span class="menu-item-price">2 €</span>
+                </li>
+              </ul>
+            </li>
+
+          </ul>
+        </section>
+
+        <!-- -----------------------------------------------------------
+             TABLA DE MENÚS PARA GRUPOS
+             Tabla con colspan Y rowspan según especificación.
+             -----------------------------------------------------------  -->
+        <section class="menu-section" aria-labelledby="grupos-heading">
+          <h2 id="grupos-heading">Menús para Grupos y Celebraciones</h2>
+          <p style="color:var(--text-muted); margin-bottom:1.5rem;">
+            Disponemos de espacios privados para grupos. Contacta con nosotros para
+            personalizar tu menú y presupuesto.
+          </p>
+
+          <!-- Wrapper con overflow para tablas en móvil -->
+          <div class="table-wrap">
+            <!-- Tabla con colspan y rowspan para menús grupales -->
+            <table>
+              <caption>Menús para grupos y celebraciones (mínimo 10 personas)</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Menú</th>
+                  <!-- colspan="2": esta celda ocupa 2 columnas (Opciones de primero) -->
+                  <th scope="col" colspan="2">Opciones de primero</th>
+                  <th scope="col">Segundo</th>
+                  <th scope="col">Postre</th>
+                  <th scope="col">Precio/p.</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Fila 1 del Menú Marinero -->
+                <tr>
+                  <!-- rowspan="2": esta celda ocupa 2 filas (Menú Marinero) -->
+                  <td rowspan="2"><strong>Menú Marinero</strong></td>
+                  <td>Gazpacho andaluz</td>
+                  <td>Ensalada mediterránea</td>
+                  <!-- rowspan="2": el segundo (Paella) es igual para ambas opciones -->
+                  <td rowspan="2">Paella marinera</td>
+                  <td>Crema catalana</td>
+                  <!-- rowspan="2": el precio es el mismo para ambas filas -->
+                  <td rowspan="2"><strong>28 €</strong></td>
+                </tr>
+                <!-- Fila 2 del Menú Marinero (segunda opción de primero y postre) -->
+                <tr>
+                  <td>Pan con tomate y anchoas</td>
+                  <td>Tabla de quesos</td>
+                  <td>Tarta de Santiago</td>
+                </tr>
+                <!-- Fila del Menú Degustación -->
+                <tr>
+                  <td><strong>Menú Degustación</strong></td>
+                  <!-- colspan="3": ocupa las columnas de las 2 opciones de primero + segundo -->
+                  <td colspan="3" class="td-center">5 platos del chef seleccionados según temporada</td>
+                  <td>Postre del día</td>
+                  <td><strong>45 €</strong></td>
+                </tr>
+                <!-- Fila del Menú Celebración -->
+                <tr>
+                  <td><strong>Menú Celebración</strong></td>
+                  <!-- colspan="4": ocupa primeros + segundo + postre -->
+                  <td colspan="4" class="td-center">Menú completamente personalizado según sus preferencias</td>
+                  <td><strong>Desde 60 €</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p style="margin-top:1rem; font-size:0.85rem; color:var(--text-muted);">
+            * Los precios incluyen bebida no alcohólica, pan y postre. Consultar disponibilidad.
+          </p>
+
+        </section>
+
+        <!-- -----------------------------------------------------------
+             ENLACES EXTERNOS DE INTERÉS
+             Links a recursos externos relacionados con la gastronomía.
+             target="_blank" y rel="noopener noreferrer" por seguridad.
+             -----------------------------------------------------------  -->
+        <section class="menu-section" aria-labelledby="recursos-heading">
+          <h2 id="recursos-heading">Recursos de Interés Gastronómico</h2>
+          <p style="color:var(--text-muted); margin-bottom:1.5rem;">
+            Descubre más sobre el mundo de la gastronomía mediterránea con estos recursos:
+          </p>
+
+          <div class="external-links">
+            <!-- Enlace externo a tienda de vinos -->
+            <a
+              href="https://www.oenoteca.cat"
+              class="external-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visitar Oenoteca (se abre en nueva pestaña)"
+            >
+              <span class="external-link-icon">🍷</span>
+              Oenoteca - Vinos artesanales
+            </a>
+
+            <!-- Enlace externo al Mercat de la Boqueria -->
+            <a
+              href="https://www.mercatdelaboqueria.cat"
+              class="external-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visitar Mercat de la Boqueria (se abre en nueva pestaña)"
+            >
+              <span class="external-link-icon">🛒</span>
+              Mercat de la Boqueria
+            </a>
+
+            <!-- Enlace externo a recurso gastronómico -->
+            <a
+              href="https://www.gastronomicspain.com"
+              class="external-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visitar Gastronomic Spain (se abre en nueva pestaña)"
+            >
+              <span class="external-link-icon">🌐</span>
+              Gastronomic Spain
+            </a>
+          </div>
+        </section>
+
+      </div><!-- fin container -->
+    </section><!-- fin section carta -->
+
+  </main>
+
+  <!-- ===================================================================
+       PIE DE PÁGINA / FOOTER
+       =================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <!-- Columna 1: Marca -->
+        <div class="footer-col">
+          <span class="footer-logo-name">El Rincón del Mar</span>
+          <span class="footer-logo-tagline">Restaurante Mediterráneo</span>
+          <p>Cocina mediterránea auténtica en el corazón de Barcelona desde 1998.</p>
+          <p style="margin-top:0.75rem; font-size:0.85rem;">
+            <a href="mailto:info@elrincondelmar.es" style="color:var(--secondary);">info@elrincondelmar.es</a><br>
+            <a href="tel:+34931234567" style="color:rgba(255,255,255,0.7);">+34 93 123 45 67</a>
+          </p>
+        </div>
+
+        <!-- Columna 2: Navegación -->
+        <nav class="footer-col" aria-label="Navegación del footer">
+          <h3>Navegación</h3>
+          <ul class="footer-nav">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="carta.html">La Carta</a></li>
+            <li><a href="nosotros.html">Sobre Nosotros</a></li>
+            <li><a href="contacto.html">Contacto y Reservas</a></li>
+          </ul>
+        </nav>
+
+        <!-- Columna 3: Legal -->
+        <nav class="footer-col" aria-label="Páginas legales">
+          <h3>Legal</h3>
+          <ul class="footer-nav">
+            <li><a href="privacidad.html">Política de Privacidad</a></li>
+            <li><a href="privacidad.html#cookies">Política de Cookies</a></li>
+            <li><a href="privacidad.html#aviso-legal">Aviso Legal</a></li>
+          </ul>
+        </nav>
+
+        <!-- Columna 4: Horarios -->
+        <div class="footer-col">
+          <h3>Horarios y Ubicación</h3>
+          <div class="footer-hours">
+            <p><strong>Martes – Viernes</strong><br>13:00 – 16:00 &amp; 20:00 – 23:00</p>
+            <p><strong>Sábado – Domingo</strong><br>12:30 – 16:30 &amp; 20:00 – 23:30</p>
+            <p><strong style="color:#e74c3c;">Lunes: Cerrado</strong></p>
+          </div>
+          <address style="font-style:normal; margin-top:1rem; font-size:0.88rem; color:rgba(255,255,255,0.65);">
+            Carrer de la Marina, 45<br>08005 Barcelona
+          </address>
+        </div>
+
+      </div><!-- fin footer-grid -->
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 El Rincón del Mar. Todos los derechos reservados.</p>
+        <nav class="footer-legal" aria-label="Legal">
+          <a href="privacidad.html">Privacidad</a>
+          <a href="privacidad.html#cookies">Cookies</a>
+          <a href="privacidad.html#aviso-legal">Aviso Legal</a>
+        </nav>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ===================================================================
+       BANNER DE COOKIES (debe ser el último elemento antes de </body>)
+       =================================================================== -->
+  <div class="cookie-banner" role="dialog" aria-label="Aviso de cookies" aria-live="polite">
+    <p>
+      Utilizamos cookies propias y de terceros para mejorar tu experiencia de navegación.
+      Puedes obtener más información en nuestra
+      <a href="privacidad.html#cookies">política de cookies</a>.
+    </p>
+    <label for="cookie-close" class="cookie-btn">Aceptar cookies</label>
+  </div>
+
+</body>
+</html>

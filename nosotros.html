@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Codificación de caracteres -->
+  <meta charset="UTF-8">
+  <!-- Viewport para diseño responsivo -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO: Metaetiquetas -->
+  <meta name="description" content="Conoce la historia de El Rincón del Mar. Desde 1998, una familia apasionada por la cocina mediterránea en Barcelona. Nuestro equipo, valores y filosofía gastronómica.">
+  <meta name="keywords" content="historia restaurante Barcelona, equipo chef barceloneta, Carlos Martínez chef, restaurante familiar mediterráneo Barcelona 1998">
+  <meta name="author" content="El Rincón del Mar">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sobre Nosotros | El Rincón del Mar">
+  <meta property="og:description" content="Desde 1998, tradición mediterránea en Barcelona. Conoce al equipo y la historia de El Rincón del Mar.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80">
+  <meta property="og:url" content="https://www.elrincondelmar.es/nosotros.html">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="El Rincón del Mar">
+
+  <title>Sobre Nosotros | El Rincón del Mar</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Cookie: el input DEBE ser el PRIMER hijo del body -->
+  <input type="checkbox" id="cookie-close" class="cookie-checkbox">
+
+  <!-- ===================================================================
+       CABECERA / HEADER
+       =================================================================== -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <!-- Logo -->
+      <a href="index.html" class="logo" aria-label="El Rincón del Mar - Ir a inicio">
+        <span class="logo-name">El Rincón del Mar</span>
+        <span class="logo-tagline">Restaurante Mediterráneo · Barcelona</span>
+      </a>
+
+      <!-- Input checkbox para el menú hamburguesa -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+
+      <!-- Hamburger: 3 spans = 3 barras -->
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <!-- Navegación - "Sobre Nosotros" activo -->
+      <nav class="site-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="carta.html">La Carta</a></li>
+          <li><a href="nosotros.html" class="active" aria-current="page">Sobre Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ===================================================================
+       CONTENIDO PRINCIPAL
+       =================================================================== -->
+  <main>
+
+    <!-- ---------------------------------------------------------------
+         PAGE HERO
+         --------------------------------------------------------------- -->
+    <section class="page-hero" aria-label="Cabecera sobre nosotros">
+      <div class="container">
+        <p class="breadcrumb">Inicio &rsaquo; Sobre Nosotros</p>
+        <h1>Sobre Nosotros</h1>
+        <p>Una historia de pasión, familia y sabores mediterráneos desde 1998</p>
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------------
+         SECCIÓN HISTORIA
+         Grid de 2 columnas: texto a la izquierda, imagen a la derecha.
+         Explica el origen y la filosofía del restaurante.
+         --------------------------------------------------------------- -->
+    <section class="section" aria-labelledby="historia-heading">
+      <div class="container">
+        <div class="historia-grid">
+
+          <!-- Texto de historia -->
+          <div>
+            <h2 id="historia-heading">Una historia de familia y Mar</h2>
+            <div class="divider divider-left"></div>
+            <p>
+              El Rincón del Mar nació en 1998 de la mano de la familia Martínez, apasionados
+              de la gastronomía mediterránea y con raíces profundas en la cultura pesquera
+              de la Barceloneta. Lo que comenzó como un pequeño local de tapas y arroces se
+              ha convertido en uno de los referentes de la cocina mediterránea en Barcelona.
+            </p>
+            <p>
+              Nuestro fundador, el señor Josep Martínez, creció viendo a su madre preparar
+              paellas los domingos con el pescado fresco que su padre traía de la lonja cada
+              madrugada. Esa tradición, ese amor por el producto y el respeto por las
+              recetas de siempre, es lo que transmitimos en cada plato que sale de nuestra
+              cocina.
+            </p>
+            <p>
+              Hoy, su hijo Carlos Martínez, formado en las mejores escuelas de cocina de
+              Barcelona y Lyon, lidera los fogones manteniendo la esencia familiar mientras
+              incorpora técnicas modernas que elevan cada preparación sin perder la
+              autenticidad que nos caracteriza.
+            </p>
+            <p>
+              A lo largo de 25 años hemos crecido, renovado el local, ampliado la carta y
+              obtenido reconocimientos, pero lo más importante para nosotros sigue siendo
+              lo mismo: que cuando salgas por nuestra puerta, te lleves una experiencia que
+              querrás repetir.
+            </p>
+          </div>
+
+          <!-- Imagen de historia -->
+          <figure>
+            <img
+              src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80"
+              alt="Interior del restaurante El Rincón del Mar, cocina mediterránea"
+              width="800"
+              height="450"
+              loading="lazy"
+            >
+            <figcaption style="font-size:0.85rem; color:var(--text-muted); margin-top:0.5rem; text-align:center; font-style:italic;">
+              El Rincón del Mar, Carrer de la Marina 45, Barcelona
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------------
+         SECCIÓN VALORES
+         3 tarjetas con iconos (entidades HTML) y descripción.
+         --------------------------------------------------------------- -->
+    <section class="section section-cream" aria-labelledby="valores-heading">
+      <div class="container">
+
+        <header class="section-header">
+          <h2 id="valores-heading">Nuestros Valores</h2>
+          <div class="divider"></div>
+          <p>Los principios que guían nuestra cocina y nuestra forma de entender la hospitalidad</p>
+        </header>
+
+        <div class="values-grid">
+
+          <!-- Valor 1: Calidad -->
+          <article class="value-card">
+            <!-- Icono usando entidad HTML: ♦ diamante -->
+            <span class="value-icon" aria-hidden="true">&#9830;</span>
+            <h3>Calidad</h3>
+            <p>
+              Seleccionamos cada ingrediente con mimo. Cada mañana visitamos los mercados
+              locales para elegir el mejor producto de temporada. Sin compromisos con
+              la calidad, nunca.
+            </p>
+          </article>
+
+          <!-- Valor 2: Tradición -->
+          <article class="value-card">
+            <!-- Icono usando entidad HTML: ★ estrella sólida -->
+            <span class="value-icon" aria-hidden="true">&#9733;</span>
+            <h3>Tradición</h3>
+            <p>
+              Respetamos las recetas de siempre. La paella marinera de nuestra abuela,
+              el bacalao al pil-pil de siempre, la crema catalana de toda la vida.
+              La tradición es nuestra brújula.
+            </p>
+          </article>
+
+          <!-- Valor 3: Sostenibilidad -->
+          <article class="value-card">
+            <!-- Icono usando entidad HTML: ♻ símbolo de reciclaje -->
+            <span class="value-icon" aria-hidden="true">&#9851;</span>
+            <h3>Sostenibilidad</h3>
+            <p>
+              Comprometidos con el medio ambiente y la pesca sostenible. Trabajamos con
+              proveedores locales, minimizamos el desperdicio alimentario y usamos
+              envases biodegradables. El mar nos lo da todo; debemos cuidarlo.
+            </p>
+          </article>
+
+        </div><!-- fin values-grid -->
+
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------------
+         SECCIÓN EQUIPO
+         Grid de 3 tarjetas con foto, nombre, cargo y descripción.
+         --------------------------------------------------------------- -->
+    <section class="section" aria-labelledby="equipo-heading">
+      <div class="container">
+
+        <header class="section-header">
+          <h2 id="equipo-heading">Nuestro Equipo</h2>
+          <div class="divider"></div>
+          <p>Las personas que hacen posible la magia en cada servicio</p>
+        </header>
+
+        <div class="team-grid">
+
+          <!-- Miembro del equipo 1: Carlos Martínez (Chef) -->
+          <article class="team-card">
+            <img
+              src="https://images.unsplash.com/photo-1581299894007-aaa50297cf16?w=800&q=80"
+              alt="Carlos Martínez, Chef Principal de El Rincón del Mar"
+              width="800"
+              height="280"
+              loading="lazy"
+            >
+            <div class="team-card-body">
+              <h3>Carlos Martínez</h3>
+              <p class="team-role">Chef Principal</p>
+              <p class="team-bio">
+                Con más de 20 años de experiencia, Carlos se formó en la Escuela
+                Hofmann de Barcelona y posteriormente en Lyon, Francia. Especialista
+                en arroces y cocina mediterránea contemporánea. Lidera los fogones
+                de El Rincón del Mar desde 2005.
+              </p>
+            </div>
+          </article>
+
+          <!-- Miembro del equipo 2: Laura García (Sous Chef) -->
+          <article class="team-card">
+            <img
+              src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=800&q=80"
+              alt="Laura García, Sous Chef especialista en arroces mediterráneos"
+              width="800"
+              height="280"
+              loading="lazy"
+            >
+            <div class="team-card-body">
+              <h3>Laura García</h3>
+              <p class="team-role">Sous Chef</p>
+              <p class="team-bio">
+                Especialista en arroces mediterráneos, Laura es el alma de los
+                fogones en el turno de comidas. Graduada en Gastronomía por la
+                Universitat de Barcelona, domina como nadie el punto perfecto
+                del socarrat y los fondos de pescado.
+              </p>
+            </div>
+          </article>
+
+          <!-- Miembro del equipo 3: Antonio López (Maître) -->
+          <article class="team-card">
+            <img
+              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&q=80"
+              alt="Antonio López, Maître con 15 años de experiencia en sala"
+              width="800"
+              height="280"
+              loading="lazy"
+            >
+            <div class="team-card-body">
+              <h3>Antonio López</h3>
+              <p class="team-role">Maître</p>
+              <p class="team-bio">
+                Antonio lleva 15 años garantizando que cada visita a El Rincón del
+                Mar sea perfecta. Con su enciclopédico conocimiento de vinos y su
+                calidez natural, es el embajador de nuestra hospitalidad. Nada
+                escapa a su atención.
+              </p>
+            </div>
+          </article>
+
+        </div><!-- fin team-grid -->
+
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------------
+         SECCIÓN GALERÍA FOTOGRÁFICA
+         Grid de 3 columnas con 6 imágenes del restaurante y platos.
+         --------------------------------------------------------------- -->
+    <section class="section section-cream" aria-labelledby="galeria-heading">
+      <div class="container">
+
+        <header class="section-header">
+          <h2 id="galeria-heading">Galería</h2>
+          <div class="divider"></div>
+          <p>Un vistazo a nuestros platos, espacios y momentos especiales</p>
+        </header>
+
+        <!-- Grid de galería 3 columnas -->
+        <div class="gallery-grid">
+
+          <figure class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80"
+              alt="Interior del restaurante El Rincón del Mar"
+              width="800"
+              height="600"
+              loading="lazy"
+            >
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1534080564583-6be75777b70a?w=800&q=80"
+              alt="Paella marinera recién preparada"
+              width="800"
+              height="600"
+              loading="lazy"
+            >
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=800&q=80"
+              alt="Mariscos frescos del Mediterráneo"
+              width="800"
+              height="600"
+              loading="lazy"
+            >
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80"
+              alt="Variedad de platos mediterráneos"
+              width="800"
+              height="600"
+              loading="lazy"
+            >
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1540189549336-e6e99eb4b951?w=800&q=80"
+              alt="Presentación artística de platos en el restaurante"
+              width="800"
+              height="600"
+              loading="lazy"
+            >
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80"
+              alt="Ambiente y decoración del restaurante"
+              width="800"
+              height="600"
+              loading="lazy"
+            >
+          </figure>
+
+        </div><!-- fin gallery-grid -->
+
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------------
+         SECCIÓN HITOS / MILESTONES
+         Lista ordenada con un sublistado anidado para premios.
+         --------------------------------------------------------------- -->
+    <section class="section" aria-labelledby="hitos-heading">
+      <div class="container">
+        <div style="max-width:800px; margin:0 auto;">
+
+          <h2 id="hitos-heading">Nuestra Trayectoria</h2>
+          <div class="divider divider-left"></div>
+          <p style="color:var(--text-muted); margin-bottom:2rem;">
+            Un recorrido por los momentos más importantes de nuestra historia:
+          </p>
+
+          <!-- Lista ordenada (ol) con sublista (ul) anidada para los premios de 2003 -->
+          <div class="milestones">
+            <ol>
+              <li>1998 – Apertura del restaurante en el Barrio de la Barceloneta</li>
+              <li>2003 – Primera distinción gastronómica
+                <!-- Sublista con los premios recibidos ese año -->
+                <ul>
+                  <li>Premio Mejor Paella de Barcelona</li>
+                  <li>Reconocimiento Guía Gourmand</li>
+                </ul>
+              </li>
+              <li>2010 – Renovación y ampliación del local</li>
+              <li>2015 – Incorporación del menú de degustación</li>
+              <li>2020 – Certificación de sostenibilidad alimentaria</li>
+              <li>2024 – Celebración de 25 años de tradición</li>
+            </ol>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------------
+         SECCIÓN ENLACES EXTERNOS
+         Links a guías y directorios gastronómicos externos.
+         target="_blank" y rel="noopener noreferrer" por seguridad.
+         --------------------------------------------------------------- -->
+    <section class="section section-cream" aria-labelledby="referencias-heading">
+      <div class="container">
+
+        <header class="section-header">
+          <h2 id="referencias-heading">Nos Avalan</h2>
+          <div class="divider"></div>
+          <p>Nos encuentras en las principales guías y plataformas gastronómicas</p>
+        </header>
+
+        <div class="external-links" style="justify-content:center;">
+
+          <!-- TripAdvisor -->
+          <a
+            href="https://www.tripadvisor.es"
+            class="external-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visitar TripAdvisor (se abre en nueva pestaña)"
+          >
+            <span class="external-link-icon">⭐</span>
+            TripAdvisor
+          </a>
+
+          <!-- Guía Michelin -->
+          <a
+            href="https://www.guide.michelin.com/es"
+            class="external-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visitar la Guía Michelin (se abre en nueva pestaña)"
+          >
+            <span class="external-link-icon">📖</span>
+            Guía Michelin
+          </a>
+
+          <!-- Turisme Barcelona -->
+          <a
+            href="https://www.barcelonaturisme.com"
+            class="external-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visitar Turisme de Barcelona (se abre en nueva pestaña)"
+          >
+            <span class="external-link-icon">🏙️</span>
+            Turisme Barcelona
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================================================================
+       PIE DE PÁGINA / FOOTER
+       =================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <!-- Columna 1: Marca -->
+        <div class="footer-col">
+          <span class="footer-logo-name">El Rincón del Mar</span>
+          <span class="footer-logo-tagline">Restaurante Mediterráneo</span>
+          <p>Cocina mediterránea auténtica en el corazón de Barcelona desde 1998.</p>
+          <p style="margin-top:0.75rem; font-size:0.85rem;">
+            <a href="mailto:info@elrincondelmar.es" style="color:var(--secondary);">info@elrincondelmar.es</a><br>
+            <a href="tel:+34931234567" style="color:rgba(255,255,255,0.7);">+34 93 123 45 67</a>
+          </p>
+        </div>
+
+        <!-- Columna 2: Navegación -->
+        <nav class="footer-col" aria-label="Navegación del footer">
+          <h3>Navegación</h3>
+          <ul class="footer-nav">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="carta.html">La Carta</a></li>
+            <li><a href="nosotros.html">Sobre Nosotros</a></li>
+            <li><a href="contacto.html">Contacto y Reservas</a></li>
+          </ul>
+        </nav>
+
+        <!-- Columna 3: Legal -->
+        <nav class="footer-col" aria-label="Páginas legales">
+          <h3>Legal</h3>
+          <ul class="footer-nav">
+            <li><a href="privacidad.html">Política de Privacidad</a></li>
+            <li><a href="privacidad.html#cookies">Política de Cookies</a></li>
+            <li><a href="privacidad.html#aviso-legal">Aviso Legal</a></li>
+          </ul>
+        </nav>
+
+        <!-- Columna 4: Horarios -->
+        <div class="footer-col">
+          <h3>Horarios y Ubicación</h3>
+          <div class="footer-hours">
+            <p><strong>Martes – Viernes</strong><br>13:00 – 16:00 &amp; 20:00 – 23:00</p>
+            <p><strong>Sábado – Domingo</strong><br>12:30 – 16:30 &amp; 20:00 – 23:30</p>
+            <p><strong style="color:#e74c3c;">Lunes: Cerrado</strong></p>
+          </div>
+          <address style="font-style:normal; margin-top:1rem; font-size:0.88rem; color:rgba(255,255,255,0.65);">
+            Carrer de la Marina, 45<br>08005 Barcelona
+          </address>
+        </div>
+
+      </div><!-- fin footer-grid -->
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 El Rincón del Mar. Todos los derechos reservados.</p>
+        <nav class="footer-legal" aria-label="Legal">
+          <a href="privacidad.html">Privacidad</a>
+          <a href="privacidad.html#cookies">Cookies</a>
+          <a href="privacidad.html#aviso-legal">Aviso Legal</a>
+        </nav>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ===================================================================
+       BANNER DE COOKIES (debe ser el último elemento antes de </body>)
+       =================================================================== -->
+  <div class="cookie-banner" role="dialog" aria-label="Aviso de cookies" aria-live="polite">
+    <p>
+      Utilizamos cookies propias y de terceros para mejorar tu experiencia de navegación.
+      Puedes obtener más información en nuestra
+      <a href="privacidad.html#cookies">política de cookies</a>.
+    </p>
+    <label for="cookie-close" class="cookie-btn">Aceptar cookies</label>
+  </div>
+
+</body>
+</html>
