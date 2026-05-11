@@ -1,0 +1,1585 @@
+/* ==========================================================================
+   El Rincón del Mar - Hoja de Estilos Principal
+   Proyecto: DAM1 - Módulo de Diseño Web
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. VARIABLES CSS (Custom Properties)
+   -------------------------------------------------------------------------- */
+:root {
+  --primary: #1a5276;
+  --primary-dark: #154360;
+  --secondary: #d4ac0d;
+  --bg-light: #faf9f7;
+  --text: #2c2c2c;
+  --text-muted: #6c757d;
+  --white: #ffffff;
+  --border: #e0ddd8;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+
+  /* Typography */
+  --font-heading: Georgia, 'Times New Roman', serif;
+  --font-body: Arial, Helvetica, sans-serif;
+
+  /* Transitions */
+  --transition: 0.3s ease;
+
+  /* Border radius */
+  --radius: 4px;
+  --radius-lg: 8px;
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* --------------------------------------------------------------------------
+   3. BASE / TIPOGRAFÍA
+   -------------------------------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  background-color: var(--bg-light);
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  line-height: 1.3;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2.2rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.3rem; }
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: var(--secondary);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* --------------------------------------------------------------------------
+   4. LAYOUT UTILITIES
+   -------------------------------------------------------------------------- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.section-dark {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.section-dark h2,
+.section-dark h3,
+.section-dark h4 {
+  color: var(--white);
+}
+
+.section-cream {
+  background: #f5f0e8;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  margin-bottom: 1rem;
+}
+
+.section-header p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.section-dark .section-header p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* --------------------------------------------------------------------------
+   5. BOTONES
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background-color var(--transition), color var(--transition), border-color var(--transition), transform var(--transition);
+  letter-spacing: 0.03em;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background-color: var(--secondary);
+  color: var(--primary-dark);
+  border-color: var(--secondary);
+}
+
+.btn-primary:hover {
+  background-color: #b8940b;
+  border-color: #b8940b;
+  color: var(--primary-dark);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--white);
+  border-color: var(--white);
+}
+
+.btn-outline:hover {
+  background-color: var(--white);
+  color: var(--primary);
+}
+
+.btn-outline-dark {
+  background-color: transparent;
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-outline-dark:hover {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+/* --------------------------------------------------------------------------
+   6. COOKIE BANNER (CSS-only)
+   -------------------------------------------------------------------------- */
+
+/* El input checkbox está oculto visualmente pero accesible */
+.cookie-checkbox {
+  display: none;
+}
+
+/* El banner de cookies */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #1a1a1a;
+  color: var(--white);
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  z-index: 9999;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.cookie-banner p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.cookie-banner a {
+  color: var(--secondary);
+  text-decoration: underline;
+}
+
+.cookie-btn {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  background-color: var(--secondary);
+  color: var(--primary-dark);
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color var(--transition);
+  flex-shrink: 0;
+}
+
+.cookie-btn:hover {
+  background-color: #b8940b;
+}
+
+/* Cuando el checkbox está marcado, ocultar el banner */
+.cookie-checkbox:checked ~ .cookie-banner {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   7. HEADER Y NAVEGACIÓN
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  line-height: 1.2;
+}
+
+.logo-name {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.02em;
+}
+
+.logo-tagline {
+  font-size: 0.75rem;
+  color: var(--secondary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Nav toggle checkbox (oculto) */
+.nav-toggle {
+  display: none;
+}
+
+/* Nav toggle label (hamburger) - oculto en escritorio */
+.nav-toggle-label {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.nav-toggle-label span {
+  display: block;
+  height: 3px;
+  background-color: var(--white);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+/* Animación del hamburger cuando está activo */
+.nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) {
+  transform: translateY(9.5px) rotate(45deg);
+}
+
+.nav-toggle:checked ~ .nav-toggle-label span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle:checked ~ .nav-toggle-label span:nth-child(3) {
+  transform: translateY(-9.5px) rotate(-45deg);
+}
+
+/* Navegación */
+.site-nav ul {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.site-nav a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: var(--radius);
+  transition: color var(--transition), background-color var(--transition);
+  letter-spacing: 0.02em;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  color: var(--white);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.site-nav a.active {
+  color: var(--secondary);
+  background-color: rgba(212, 172, 13, 0.15);
+}
+
+/* --------------------------------------------------------------------------
+   8. HERO SECTION
+   -------------------------------------------------------------------------- */
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(21, 67, 96, 0.55) 0%,
+    rgba(21, 67, 96, 0.75) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 2rem 1.5rem;
+  color: var(--white);
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--secondary);
+  padding: 0.4rem 1.2rem;
+  border-radius: 2rem;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* --------------------------------------------------------------------------
+   9. PAGE HERO (páginas interiores)
+   -------------------------------------------------------------------------- */
+.page-hero {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  padding: 4rem 0;
+  text-align: center;
+  color: var(--white);
+}
+
+.page-hero h1 {
+  color: var(--white);
+  font-size: 3rem;
+  margin-bottom: 0.75rem;
+}
+
+.page-hero p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+.page-hero .breadcrumb {
+  font-size: 0.85rem;
+  color: var(--secondary);
+  margin-bottom: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   10. CARDS / ESPECIALIDADES
+   -------------------------------------------------------------------------- */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.14);
+}
+
+.card-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-body h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+}
+
+.card-body p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   11. WELCOME / 2-COLUMN GRID
+   -------------------------------------------------------------------------- */
+.welcome-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.welcome-img-wrap {
+  position: relative;
+}
+
+.welcome-img-wrap img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+
+.welcome-badge {
+  position: absolute;
+  bottom: -1.5rem;
+  right: -1.5rem;
+  width: 100px;
+  height: 100px;
+  background: var(--secondary);
+  color: var(--primary-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.2;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.welcome-text h2 {
+  margin-bottom: 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   12. STATS BAR
+   -------------------------------------------------------------------------- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--secondary);
+  display: block;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   13. VIDEO WRAPPER
+   -------------------------------------------------------------------------- */
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* --------------------------------------------------------------------------
+   14. MENÚ / CARTA
+   -------------------------------------------------------------------------- */
+.menu-section {
+  margin-bottom: 3.5rem;
+}
+
+.menu-section h2 {
+  border-bottom: 3px solid var(--secondary);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+}
+
+.menu-list {
+  list-style: none;
+}
+
+.menu-list > li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.menu-list > li:last-child {
+  border-bottom: none;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.menu-item-name {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+.menu-item-desc {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  display: block;
+  margin-top: 0.2rem;
+}
+
+.menu-item-price {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--primary);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Sublistas de bebidas */
+.menu-sublist {
+  list-style: none;
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+}
+
+.menu-sublist li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.4rem 0;
+  border-bottom: 1px dashed var(--border);
+  font-size: 0.95rem;
+}
+
+.menu-sublist li:last-child {
+  border-bottom: none;
+}
+
+/* --------------------------------------------------------------------------
+   15. TABLAS
+   -------------------------------------------------------------------------- */
+.table-wrap {
+  overflow-x: auto;
+  margin: 2rem 0;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  font-size: 0.95rem;
+}
+
+caption {
+  font-style: italic;
+  color: var(--text-muted);
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+th {
+  background: var(--primary);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-weight: 600;
+  padding: 0.9rem 1.2rem;
+  text-align: left;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+}
+
+td {
+  padding: 0.8rem 1.2rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+/* Filas alternas */
+tbody tr:nth-child(even) {
+  background-color: #f8f6f2;
+}
+
+tbody tr:hover {
+  background-color: #eef4f8;
+}
+
+.td-center {
+  text-align: center;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   16. FORMULARIOS
+   -------------------------------------------------------------------------- */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="time"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text);
+  background-color: var(--white);
+  transition: border-color var(--transition), box-shadow var(--transition);
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(26, 82, 118, 0.15);
+}
+
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236c757d' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.9rem center;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* Checkbox RGPD */
+.form-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: #f8f6f2;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.form-check input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  cursor: pointer;
+  accent-color: var(--primary);
+}
+
+.form-check label {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin: 0;
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+.form-check label a {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   17. CONTACT LAYOUT
+   -------------------------------------------------------------------------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.contact-info h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--secondary);
+}
+
+.contact-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.contact-icon {
+  font-size: 1.2rem;
+  line-height: 1;
+  margin-top: 0.1rem;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+/* Map */
+.map-wrap {
+  margin-top: 1.5rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.map-wrap iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   18. FOOTER
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background-color: #0f2f44;
+  color: rgba(255, 255, 255, 0.75);
+  padding: 4rem 0 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.footer-col h3 {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--white);
+  margin-bottom: 1.25rem;
+}
+
+.footer-col p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+}
+
+.footer-logo-name {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--white);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.footer-logo-tagline {
+  font-size: 0.75rem;
+  color: var(--secondary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.footer-nav {
+  list-style: none;
+}
+
+.footer-nav li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-nav a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.footer-nav a:hover {
+  color: var(--secondary);
+}
+
+.footer-hours p {
+  font-size: 0.88rem;
+  margin-bottom: 0.35rem;
+}
+
+.footer-hours strong {
+  color: var(--white);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.25rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.footer-legal {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-legal a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.footer-legal a:hover {
+  color: var(--secondary);
+}
+
+/* --------------------------------------------------------------------------
+   19. GALERÍA
+   -------------------------------------------------------------------------- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: var(--radius);
+  aspect-ratio: 4/3;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* --------------------------------------------------------------------------
+   20. EQUIPO / TEAM
+   -------------------------------------------------------------------------- */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.team-card {
+  text-align: center;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding-bottom: 1.5rem;
+}
+
+.team-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.team-card-body {
+  padding: 1.25rem 1.25rem 0;
+}
+
+.team-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.team-role {
+  color: var(--secondary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+.team-bio {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   21. VALUES / VALORES
+   -------------------------------------------------------------------------- */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.value-card {
+  text-align: center;
+  padding: 2.5rem 2rem;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.value-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 1rem;
+  color: var(--secondary);
+}
+
+.value-card h3 {
+  margin-bottom: 0.75rem;
+}
+
+.value-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   22. HISTORIA (2-col)
+   -------------------------------------------------------------------------- */
+.historia-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.historia-grid img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+
+/* --------------------------------------------------------------------------
+   23. HITOS / MILESTONES
+   -------------------------------------------------------------------------- */
+.milestones ol {
+  list-style: decimal;
+  padding-left: 1.5rem;
+}
+
+.milestones ol li {
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.milestones ol li ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.milestones ol li ul li {
+  margin-bottom: 0.35rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* --------------------------------------------------------------------------
+   24. ENLACES EXTERNOS
+   -------------------------------------------------------------------------- */
+.external-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.external-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  border: 2px solid var(--border);
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  color: var(--primary);
+  font-weight: 500;
+  text-decoration: none;
+  transition: border-color var(--transition), background-color var(--transition), color var(--transition);
+}
+
+.external-link:hover {
+  border-color: var(--primary);
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.external-link-icon {
+  font-size: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   25. CONTENIDO LEGAL
+   -------------------------------------------------------------------------- */
+.legal-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+.legal-content h1 {
+  margin-bottom: 0.5rem;
+}
+
+.legal-intro {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  border-left: 4px solid var(--secondary);
+  padding-left: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.legal-section {
+  margin-bottom: 2.5rem;
+}
+
+.legal-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.legal-section ul,
+.legal-section ol {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin: 0.75rem 0;
+}
+
+.legal-section ol {
+  list-style: decimal;
+}
+
+.legal-section li {
+  margin-bottom: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* --------------------------------------------------------------------------
+   26. RESPONSIVE - TABLET (max-width: 1024px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  h1 { font-size: 2.4rem; }
+  h2 { font-size: 1.9rem; }
+
+  /* Cards 2 columnas */
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Team 2 columnas */
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Stats 2 columnas */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 2.5rem;
+  }
+
+  /* Footer 2 columnas */
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Values 2 columnas */
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Welcome grid */
+  .welcome-grid {
+    gap: 2.5rem;
+  }
+
+  /* Historia grid */
+  .historia-grid {
+    gap: 2.5rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   27. RESPONSIVE - MÓVIL (max-width: 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  /* Tipografía */
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.6rem; }
+  .hero-content h1 { font-size: 2.4rem; }
+
+  /* Mostrar hamburger */
+  .nav-toggle-label {
+    display: flex;
+  }
+
+  /* Navegación oculta por defecto en móvil */
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--primary-dark);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+
+  /* Mostrar nav cuando el toggle está activo */
+  .nav-toggle:checked ~ .site-nav {
+    max-height: 400px;
+  }
+
+  .site-nav ul {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 1rem 0;
+  }
+
+  .site-nav a {
+    padding: 0.85rem 1.5rem;
+    border-radius: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .site-nav a.active {
+    border-left: 4px solid var(--secondary);
+  }
+
+  /* Cards 1 columna */
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Team 1 columna */
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Values 1 columna */
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer 1 columna */
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 75vh;
+  }
+
+  /* Gallery 1 columna */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Form grid 1 columna */
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Contact grid 1 columna */
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Welcome 1 columna */
+  .welcome-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .welcome-badge {
+    right: 0;
+  }
+
+  /* Historia 1 columna */
+  .historia-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* Section padding */
+  .section {
+    padding: 3rem 0;
+  }
+
+  /* Cookie banner en móvil */
+  .cookie-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  /* Stats 1 columna en móvil */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Hero buttons */
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* External links */
+  .external-links {
+    flex-direction: column;
+  }
+
+  /* Page hero */
+  .page-hero h1 {
+    font-size: 2rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   28. UTILIDADES ADICIONALES
+   -------------------------------------------------------------------------- */
+.divider {
+  width: 60px;
+  height: 4px;
+  background: var(--secondary);
+  margin: 1rem auto 2rem;
+  border-radius: 2px;
+}
+
+.divider-left {
+  margin-left: 0;
+}
+
+.highlight {
+  color: var(--secondary);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+/* Animaciones suaves */
+@media (prefers-reduced-motion: no-preference) {
+  .card,
+  .team-card,
+  .value-card {
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+}
+
+/* Accesibilidad: focus visible */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+label:focus-visible {
+  outline: 3px solid var(--secondary);
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   29. DOCUMENTACIÓ (documentacio.html)
+   -------------------------------------------------------------------------- */
+.doc-block {
+  margin-bottom: 3rem;
+}
+
+.doc-block h2 {
+  font-size: 1.8rem;
+  color: var(--primary);
+}
+
+.doc-block h3 {
+  font-size: 1.25rem;
+  color: var(--primary);
+  margin: 1.75rem 0 0.75rem;
+}
+
+.doc-block code {
+  background: #f0ece6;
+  padding: 0.15em 0.45em;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.88em;
+  color: var(--accent, #8b2500);
+}
+
+.doc-separator {
+  border: none;
+  border-top: 2px solid var(--border);
+  margin: 3rem 0;
+}
+
+.doc-list {
+  list-style: decimal;
+  margin-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+.doc-list li {
+  margin-bottom: 0.75rem;
+  line-height: 1.7;
+}
+
+.doc-bullet-list {
+  list-style: disc;
+  margin-left: 1.5rem;
+  margin-top: 0.75rem;
+}
+
+.doc-bullet-list li {
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+}
+
+.doc-resource-list {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.doc-resource-list li {
+  padding: 0.85rem 1rem;
+  border-left: 4px solid var(--secondary);
+  background: #f5f0e8;
+  margin-bottom: 0.75rem;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  line-height: 1.6;
+}
+
+.doc-resource-list li a {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Grid de herramientas de prototipado */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.tool-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.tool-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  margin-top: 0;
+}
+
+.tool-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 1024px) {
+  .tools-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+}
