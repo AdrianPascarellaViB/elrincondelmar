@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Codificació de caràcters -->
+  <meta charset="UTF-8">
+  <!-- Viewport per a disseny responsiu -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- No indexar aquesta pàgina de prototip -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <title>Prototipat - El Rincón del Mar</title>
+
+  <style>
+    /* ============================================================
+       ESTILS DEL PROTOTIP (wireframe)
+       Estils mínims per mostrar caixes i etiquetes sense disseny real.
+       ============================================================ */
+
+    /* Reset mínim */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f0f0f0;
+      padding: 2rem;
+      color: #333;
+    }
+
+    /* Títol principal del document de prototip */
+    .proto-title {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #222;
+      margin-bottom: 0.5rem;
+    }
+
+    .proto-subtitle {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 0.5rem;
+    }
+
+    .proto-tools {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 2.5rem;
+      padding: 0.75rem 1rem;
+      background: #fff;
+      border-left: 4px solid #333;
+    }
+
+    .proto-tools a {
+      color: #1a5276;
+    }
+
+    /* Contenidor de cada pàgina wireframe */
+    .page-wireframe {
+      background: white;
+      margin: 2rem auto;
+      max-width: 1000px;
+      border: 2px solid #333;
+      padding: 1rem;
+      box-shadow: 4px 4px 0 #aaa;
+    }
+
+    /* Títol de cada pàgina wireframe */
+    .page-title {
+      background: #333;
+      color: white;
+      padding: 0.5rem 1rem;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .page-title span {
+      font-size: 0.85rem;
+      opacity: 0.7;
+      font-weight: normal;
+    }
+
+    /* Caixa genèrica de wireframe */
+    .wf-box {
+      background: #ddd;
+      border: 1px solid #aaa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #555;
+      font-size: 0.85rem;
+      text-align: center;
+      padding: 0.5rem;
+    }
+
+    /* Etiqueta de secció (barra gris fosca) */
+    .section-label {
+      background: #555;
+      color: white;
+      padding: 0.3rem 0.75rem;
+      font-size: 0.78rem;
+      font-weight: bold;
+      margin: 0.5rem 0 0.25rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* Mides estàndard de caixes */
+    .wf-header {
+      height: 60px;
+      margin-bottom: 0.5rem;
+      background: #b8c8d8;
+    }
+
+    .wf-page-hero {
+      height: 120px;
+      margin-bottom: 0.5rem;
+      background: #c8d8e8;
+    }
+
+    .wf-hero {
+      height: 300px;
+      margin-bottom: 0.5rem;
+      background: #c0c8d0;
+    }
+
+    .wf-card {
+      height: 200px;
+      background: #e0e0e0;
+    }
+
+    .wf-text {
+      height: 150px;
+      background: #e8e8e8;
+    }
+
+    .wf-img {
+      height: 200px;
+      background: #d0d8e0;
+    }
+
+    .wf-img-tall {
+      height: 280px;
+      background: #d0d8e0;
+    }
+
+    .wf-stats {
+      height: 100px;
+      background: #b8c8d8;
+    }
+
+    .wf-cta {
+      height: 100px;
+      background: #d8e8d0;
+    }
+
+    .wf-footer {
+      height: 100px;
+      margin-top: 0.5rem;
+      background: #8899aa;
+      color: white;
+      font-size: 0.9rem;
+    }
+
+    .wf-form {
+      height: 380px;
+      background: #e8f0e8;
+    }
+
+    .wf-map {
+      height: 180px;
+      background: #d8e8d8;
+    }
+
+    .wf-table {
+      height: 120px;
+      background: #ece8e0;
+    }
+
+    .wf-gallery-img {
+      height: 160px;
+      background: #d0d8e0;
+    }
+
+    .wf-team-card {
+      height: 240px;
+      background: #e0e0e0;
+    }
+
+    .wf-timeline {
+      height: 180px;
+      background: #e8e8e0;
+    }
+
+    .wf-video {
+      height: 200px;
+      background: #c8c0c0;
+    }
+
+    .wf-legal-block {
+      height: 100px;
+      background: #e8e8e8;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Graelles */
+    .wf-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .wf-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .wf-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .wf-grid-2-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Etiqueta visual */
+    .wf-label {
+      font-weight: bold;
+      font-size: 0.8rem;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .wf-note {
+      font-size: 0.7rem;
+      color: #777;
+    }
+
+    /* Separació entre seccions del wireframe */
+    .wf-gap {
+      height: 0.5rem;
+    }
+
+    /* Llegenda de colors */
+    .legend {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin: 1.5rem 0;
+      padding: 1rem;
+      background: white;
+      border: 1px solid #ccc;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+    }
+
+    .legend-color {
+      width: 24px;
+      height: 24px;
+      border: 1px solid #aaa;
+      flex-shrink: 0;
+    }
+
+    /* Indicador de pàgina activa al nav del wireframe */
+    .wf-nav-active {
+      background: #8899aa;
+      color: white;
+    }
+
+    /* Nota de disseny */
+    .design-note {
+      background: #fffde7;
+      border: 1px solid #f9a825;
+      padding: 0.75rem 1rem;
+      font-size: 0.82rem;
+      color: #5d4037;
+      margin: 0.5rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================================================================
+       TÍTOL PRINCIPAL DEL DOCUMENT DE PROTOTIPAT
+       =================================================================== -->
+  <h1 class="proto-title">Prototipat - El Rincón del Mar</h1>
+  <p class="proto-subtitle">Document de prototip fil de ferro (wireframe) · Projecte DAM1 · Disseny Web</p>
+
+  <div class="proto-tools">
+    <strong>Eines de prototipat utilitzades / recomanades:</strong><br>
+    &bull; <a href="https://figma.com" target="_blank" rel="noopener noreferrer">Figma</a> — Eina professional de disseny UI/UX col·laboratiu al núvol<br>
+    &bull; <a href="https://balsamiq.com" target="_blank" rel="noopener noreferrer">Balsamiq</a> — Eina especialitzada en wireframes d'esquema ràpid<br>
+    &bull; <a href="https://wireframe.cc" target="_blank" rel="noopener noreferrer">Wireframe.cc</a> — Eina simple i ràpida per a prototipat bàsic al navegador
+  </div>
+
+  <!-- Llegenda de colors -->
+  <div class="legend">
+    <strong style="align-self:center;">Llegenda:</strong>
+    <div class="legend-item">
+      <div class="legend-color" style="background:#b8c8d8;"></div>
+      <span>Capçalera / Header (blau fosc)</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color" style="background:#c8d8e8;"></div>
+      <span>Hero / Portada de pàgina</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color" style="background:#e0e0e0;"></div>
+      <span>Cards / Targetes de contingut</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color" style="background:#d0d8e0;"></div>
+      <span>Imatges (placeholders)</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color" style="background:#e8f0e8;"></div>
+      <span>Formulari</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color" style="background:#8899aa;"></div>
+      <span>Peu de pàgina / Footer</span>
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       WIREFRAME 1: INDEX.HTML (Pàgina d'inici)
+       =================================================================== -->
+  <div class="page-wireframe">
+    <div class="page-title">
+      Pàgina 1: Inici (index.html)
+      <span>El Rincón del Mar · Pàgina principal</span>
+    </div>
+
+    <!-- Header -->
+    <div class="section-label">Capçalera (Header - sticky, blau marí)</div>
+    <div class="wf-box wf-header">
+      <div style="display:flex; justify-content:space-between; width:100%; padding:0 1rem; align-items:center;">
+        <div>
+          <span class="wf-label">LOGO: El Rincón del Mar</span>
+          <span class="wf-note">Subtítol: Restaurante Mediterráneo · Barcelona</span>
+        </div>
+        <div style="display:flex; gap:0.5rem; font-size:0.8rem;">
+          <span class="wf-nav-active" style="padding:0.2rem 0.5rem;">Inicio</span>
+          <span style="padding:0.2rem 0.5rem;">La Carta</span>
+          <span style="padding:0.2rem 0.5rem;">Sobre Nosotros</span>
+          <span style="padding:0.2rem 0.5rem;">Contacto</span>
+          <span style="padding:0.2rem 0.5rem; font-weight:bold; color:#777;">☰ (mòbil)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <div class="section-label">Secció Hero (90vh altura, imatge de fons + overlay fosc)</div>
+    <div class="wf-box wf-hero" style="flex-direction:column; gap:0.5rem; background:linear-gradient(rgba(21,67,96,0.6),rgba(21,67,96,0.8)), #ccc;">
+      <span class="wf-label" style="color:white;">[ IMATGE DE FONS: Restaurant mediterrani - Unsplash ]</span>
+      <div style="text-align:center; color:white;">
+        <div style="border:1px solid gold; display:inline-block; padding:0.2rem 0.8rem; font-size:0.75rem; color:gold; margin-bottom:0.5rem;">Desde 1998 · Barcelona</div><br>
+        <span style="font-size:1.3rem; font-weight:bold;">Sabores del Mediterráneo</span><br>
+        <span style="font-size:0.8rem;">Tradición, frescura y pasión por la cocina en cada plato</span><br>
+        <div style="display:flex; gap:0.5rem; justify-content:center; margin-top:0.5rem;">
+          <span style="background:gold; color:#333; padding:0.3rem 0.8rem; font-size:0.75rem; font-weight:bold;">[ Ver la Carta ]</span>
+          <span style="border:1px solid white; color:white; padding:0.3rem 0.8rem; font-size:0.75rem;">[ Hacer una Reserva ]</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Benvinguda -->
+    <div class="section-label">Secció Benvinguda (grid 2 columnes: imatge + text)</div>
+    <div class="wf-grid-2" style="margin-bottom:0.5rem;">
+      <div class="wf-box wf-img" style="flex-direction:column;">
+        <span class="wf-label">[ IMATGE restaurant ]</span>
+        <span class="wf-note">Badge: "+25 anys" (cercle daurat)</span>
+      </div>
+      <div class="wf-box wf-text" style="flex-direction:column; text-align:left; padding:1rem;">
+        <span class="wf-label">Bienvenidos a nuestra casa</span>
+        <span class="wf-note">Paràgraf 1: Història del restaurant (1998...)</span>
+        <span class="wf-note">Paràgraf 2: Chef Carlos Martínez...</span>
+        <span class="wf-note">Paràgraf 3: Valors del restaurant</span>
+        <span style="font-size:0.75rem; background:#ddd; display:inline-block; padding:0.2rem 0.5rem; margin-top:0.5rem;">[ Conoce nuestra historia ]</span>
+      </div>
+    </div>
+
+    <!-- Especialitats -->
+    <div class="section-label">Secció Especialitats (fons crema, grid 3 targetes)</div>
+    <div style="background:#f5f0e8; padding:0.5rem; margin-bottom:0.5rem;">
+      <div style="text-align:center; padding:0.5rem; font-size:0.85rem; font-weight:bold;">Nuestras Especialidades</div>
+      <div class="wf-grid-3">
+        <div class="wf-box wf-card" style="flex-direction:column; gap:0.3rem;">
+          <div style="width:100%; height:60%; background:#c8c8c8; display:flex; align-items:center; justify-content:center; font-size:0.7rem;">[ img Paella ]</div>
+          <span class="wf-label">Paella Marinera</span>
+          <span class="wf-note">Text descriptiu...</span>
+        </div>
+        <div class="wf-box wf-card" style="flex-direction:column; gap:0.3rem;">
+          <div style="width:100%; height:60%; background:#c8c8c8; display:flex; align-items:center; justify-content:center; font-size:0.7rem;">[ img Mariscos ]</div>
+          <span class="wf-label">Mariscos al Natural</span>
+          <span class="wf-note">Text descriptiu...</span>
+        </div>
+        <div class="wf-box wf-card" style="flex-direction:column; gap:0.3rem;">
+          <div style="width:100%; height:60%; background:#c8c8c8; display:flex; align-items:center; justify-content:center; font-size:0.7rem;">[ img Tapas ]</div>
+          <span class="wf-label">Tapas Mediterráneas</span>
+          <span class="wf-note">Text descriptiu...</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vídeo -->
+    <div class="section-label">Secció Vídeo (iframe YouTube responsiu 16:9)</div>
+    <div class="wf-box wf-video" style="flex-direction:column; margin-bottom:0.5rem;">
+      <span class="wf-label">[ VIDEO YOUTUBE: El Arte de la Paella Mediterránea ]</span>
+      <span class="wf-note">iframe embed - padding-bottom: 56.25% (ratio 16:9)</span>
+      <span style="font-size:1.5rem; color:#aaa;">▶</span>
+    </div>
+
+    <!-- Estadístiques -->
+    <div class="section-label">Secció Estadístiques (fons blau marí, grid 4 columnes)</div>
+    <div style="background:#1a5276; padding:0.75rem; margin-bottom:0.5rem;">
+      <div class="wf-grid-4">
+        <div class="wf-box wf-stats" style="flex-direction:column; background:rgba(255,255,255,0.1); color:white;">
+          <span style="font-size:1.5rem; color:gold; font-weight:bold;">25+</span>
+          <span style="font-size:0.7rem;">Años de experiencia</span>
+        </div>
+        <div class="wf-box wf-stats" style="flex-direction:column; background:rgba(255,255,255,0.1); color:white;">
+          <span style="font-size:1.5rem; color:gold; font-weight:bold;">150</span>
+          <span style="font-size:0.7rem;">Comensales al día</span>
+        </div>
+        <div class="wf-box wf-stats" style="flex-direction:column; background:rgba(255,255,255,0.1); color:white;">
+          <span style="font-size:1.5rem; color:gold; font-weight:bold;">40+</span>
+          <span style="font-size:0.7rem;">Platos en carta</span>
+        </div>
+        <div class="wf-box wf-stats" style="flex-direction:column; background:rgba(255,255,255,0.1); color:white;">
+          <span style="font-size:1.5rem; color:gold; font-weight:bold;">98%</span>
+          <span style="font-size:0.7rem;">Clientes satisfechos</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA final -->
+    <div class="section-label">Secció CTA Final (fons crema, botons de reserva)</div>
+    <div class="wf-box wf-cta" style="flex-direction:column; gap:0.5rem; background:#f5f0e8; margin-bottom:0.5rem;">
+      <span class="wf-label">¿Listo para una experiencia gastronómica?</span>
+      <div style="display:flex; gap:0.5rem;">
+        <span style="background:gold; color:#333; padding:0.3rem 0.8rem; font-size:0.75rem; font-weight:bold;">[ Hacer una Reserva ]</span>
+        <span style="border:1px solid #1a5276; color:#1a5276; padding:0.3rem 0.8rem; font-size:0.75rem;">[ Ver la Carta ]</span>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="section-label">Peu de pàgina (Footer - grid 4 columnes, fons blau fosc)</div>
+    <div class="wf-box wf-footer" style="flex-direction:column; gap:0.3rem;">
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; width:100%; padding:0 1rem; text-align:left;">
+        <div><span style="font-size:0.7rem; font-weight:bold; display:block;">El Rincón del Mar</span><span style="font-size:0.65rem; opacity:0.7;">Descripció + email + tel</span></div>
+        <div><span style="font-size:0.7rem; font-weight:bold; display:block;">Navegació</span><span style="font-size:0.65rem; opacity:0.7;">Inici / Carta / Nosaltres / Contacte</span></div>
+        <div><span style="font-size:0.7rem; font-weight:bold; display:block;">Legal</span><span style="font-size:0.65rem; opacity:0.7;">Privacitat / Cookies / Avís Legal</span></div>
+        <div><span style="font-size:0.7rem; font-weight:bold; display:block;">Horaris</span><span style="font-size:0.65rem; opacity:0.7;">Dt-Dv 13-16h / 20-23h</span></div>
+      </div>
+      <div style="font-size:0.65rem; opacity:0.6; border-top:1px solid rgba(255,255,255,0.2); padding-top:0.3rem; width:100%; text-align:center;">© 2025 El Rincón del Mar — Privacitat · Cookies · Avís Legal</div>
+    </div>
+
+    <!-- Banner cookies -->
+    <div class="design-note">
+      &#9664; Banner de cookies (posició: fixed, bottom: 0) — Visible fins que l'usuari clica "Aceptar cookies".
+      Funciona amb CSS pur: <code>input#cookie-close.cookie-checkbox</code> (primer fill de body) +
+      <code>.cookie-checkbox:checked ~ .cookie-banner { display: none; }</code>
+    </div>
+
+  </div><!-- fi wireframe index -->
+
+
+  <!-- ===================================================================
+       WIREFRAME 2: CARTA.HTML (Pàgina de la carta / menú)
+       =================================================================== -->
+  <div class="page-wireframe">
+    <div class="page-title">
+      Pàgina 2: La Carta (carta.html)
+      <span>Menú complet del restaurant</span>
+    </div>
+
+    <!-- Header -->
+    <div class="section-label">Capçalera (Header - ítem "La Carta" actiu)</div>
+    <div class="wf-box wf-header" style="background:#b8c8d8;">
+      <div style="display:flex; justify-content:space-between; width:100%; padding:0 1rem; align-items:center;">
+        <span style="font-size:0.85rem; font-weight:bold;">LOGO: El Rincón del Mar</span>
+        <div style="display:flex; gap:0.5rem; font-size:0.8rem;">
+          <span style="padding:0.2rem 0.5rem;">Inicio</span>
+          <span class="wf-nav-active" style="padding:0.2rem 0.5rem;">La Carta ←actiu</span>
+          <span style="padding:0.2rem 0.5rem;">Sobre Nosotros</span>
+          <span style="padding:0.2rem 0.5rem;">Contacto</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page Hero petit -->
+    <div class="section-label">Page Hero (petit, fons blau degradat, sense imatge de fons)</div>
+    <div class="wf-box wf-page-hero" style="flex-direction:column; gap:0.3rem;">
+      <span style="font-size:0.7rem; color:#aaa;">Inicio › La Carta (breadcrumb)</span>
+      <span class="wf-label" style="font-size:1.1rem;">Nuestra Carta</span>
+      <span class="wf-note">Subtítol: Ingredients frescos, receptes de temporada...</span>
+    </div>
+
+    <!-- Contingut carta -->
+    <div class="section-label">Contingut principal: seccions de menú</div>
+    <div style="padding:0.5rem;">
+
+      <!-- Avís del chef -->
+      <div class="wf-box" style="height:40px; background:#f5f0e8; border-left:4px solid gold; margin-bottom:0.5rem; justify-content:flex-start; padding:0 1rem;">
+        <span style="font-size:0.75rem;">Nota del Chef: productes frescos, al·lèrgies, IVA inclòs</span>
+      </div>
+
+      <!-- Seccions de la carta -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; margin-bottom:0.5rem;">
+        <div>
+          <div class="wf-box" style="background:#e8f0e8; height:30px; justify-content:flex-start; padding:0 0.5rem; margin-bottom:0.25rem;"><span style="font-size:0.75rem; font-weight:bold;">🍞 Entrantes (5 plats)</span></div>
+          <div class="wf-box" style="height:120px; flex-direction:column; align-items:flex-start; padding:0.5rem; font-size:0.7rem; background:#f0f0f0; gap:0.2rem;">
+            <span>• Pan con tomate .......... 4 €</span>
+            <span>• Jamón ibérico .......... 12 €</span>
+            <span>• Croquetes caseres (6u) .. 8 €</span>
+            <span>• Gazpacho andaluz ........ 6 €</span>
+            <span>• Taula de formatges ..... 14 €</span>
+          </div>
+        </div>
+        <div>
+          <div class="wf-box" style="background:#e8f0e8; height:30px; justify-content:flex-start; padding:0 0.5rem; margin-bottom:0.25rem;"><span style="font-size:0.75rem; font-weight:bold;">🐟 Principals (3 plats)</span></div>
+          <div class="wf-box" style="height:120px; flex-direction:column; align-items:flex-start; padding:0.5rem; font-size:0.7rem; background:#f0f0f0; gap:0.2rem;">
+            <span>• Daurada a la sal ........ 22 €</span>
+            <span>• Llobarro al forn ........ 24 €</span>
+            <span>• Bacallà al pil-pil ...... 20 €</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; margin-bottom:0.5rem;">
+        <div>
+          <div class="wf-box" style="background:#e8f0e8; height:30px; justify-content:flex-start; padding:0 0.5rem; margin-bottom:0.25rem;"><span style="font-size:0.75rem; font-weight:bold;">🥘 Arrossos i Fideuàs (4 plats)</span></div>
+          <div class="wf-box" style="height:100px; flex-direction:column; align-items:flex-start; padding:0.5rem; font-size:0.7rem; background:#f0f0f0; gap:0.2rem;">
+            <span>• Paella marinera ......... 18 €</span>
+            <span>• Arròs negre amb sèpia .. 17 €</span>
+            <span>• Fideuà de mariscos ..... 19 €</span>
+            <span>• Arròs a banda .......... 16 €</span>
+          </div>
+        </div>
+        <div>
+          <div class="wf-box" style="background:#e8f0e8; height:30px; justify-content:flex-start; padding:0 0.5rem; margin-bottom:0.25rem;"><span style="font-size:0.75rem; font-weight:bold;">🍮 Postres (5 plats)</span></div>
+          <div class="wf-box" style="height:100px; flex-direction:column; align-items:flex-start; padding:0.5rem; font-size:0.7rem; background:#f0f0f0; gap:0.2rem;">
+            <span>• Crema catalana .......... 5 €</span>
+            <span>• Tarta de Santiago ....... 5 €</span>
+            <span>• Mousse de xocolata ..... 5 €</span>
+            <span>• Flam casolà ............ 4 €</span>
+            <span>• Sorbet de llimona ....... 4 €</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Begudes amb subllistes -->
+      <div class="wf-box" style="background:#e8f0e8; height:30px; justify-content:flex-start; padding:0 0.5rem; margin-bottom:0.25rem;"><span style="font-size:0.75rem; font-weight:bold;">🍷 Begudes (amb subllistes: Vins blancs / Vins negres / Cerveses)</span></div>
+      <div class="wf-box wf-table" style="flex-direction:column; align-items:flex-start; padding:0.5rem; font-size:0.7rem; background:#f0f0f0;">
+        <span>▸ Vins blancs: Albariño 18€ / Verdejo 16€ / Chardonnay 15€</span>
+        <span>▸ Vins negres: Rioja Crianza 22€ / Ribera 25€ / Priorat 28€</span>
+        <span>▸ Cerveses: Estrella Damm 3€ / Moritz 3€ / Aigua 2€</span>
+        <span style="color:#888; margin-top:0.5rem;">← &lt;ul&gt; amb &lt;ul class="menu-sublist"&gt; anidats</span>
+      </div>
+
+    </div>
+
+    <!-- Taula de menús per a grups -->
+    <div class="section-label">Taula de menús per a grups (amb colspan i rowspan)</div>
+    <div class="wf-box wf-table" style="flex-direction:column; padding:0.75rem; background:#ece8e0; margin-bottom:0.5rem;">
+      <span class="wf-label">TAULA: Menús para grupos y celebraciones</span>
+      <div style="font-size:0.7rem; color:#555; margin-top:0.5rem; text-align:left;">
+        <strong>Capçaleres:</strong> Menú | [Opcions de primer (colspan=2)] | Segon | Postre | Preu/p<br>
+        <strong>Fila 1-2:</strong> "Menú Marinero" (rowspan=2), "Paella" (rowspan=2), Preu 28€ (rowspan=2)<br>
+        <strong>Fila 3:</strong> "Menú Degustació" + 3 opcions (colspan=3) + postre + 45€<br>
+        <strong>Fila 4:</strong> "Menú Celebració" + descripció (colspan=4) + Des de 60€
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="section-label">Peu de pàgina (idèntic a totes les pàgines)</div>
+    <div class="wf-box wf-footer">
+      <span style="font-size:0.8rem;">[ Footer grid 4 columnes: Marca | Navegació | Legal | Horaris ]</span>
+    </div>
+
+  </div><!-- fi wireframe carta -->
+
+
+  <!-- ===================================================================
+       WIREFRAME 3: NOSOTROS.HTML (Pàgina Sobre Nosaltres)
+       =================================================================== -->
+  <div class="page-wireframe">
+    <div class="page-title">
+      Pàgina 3: Sobre Nosotros (nosotros.html)
+      <span>Història, equip i galeria</span>
+    </div>
+
+    <!-- Header -->
+    <div class="section-label">Capçalera (Header - ítem "Sobre Nosotros" actiu)</div>
+    <div class="wf-box wf-header">
+      <div style="display:flex; justify-content:space-between; width:100%; padding:0 1rem; align-items:center;">
+        <span style="font-size:0.85rem; font-weight:bold;">LOGO</span>
+        <div style="display:flex; gap:0.5rem; font-size:0.8rem;">
+          <span>Inicio</span>
+          <span>La Carta</span>
+          <span class="wf-nav-active" style="padding:0.2rem 0.5rem;">Sobre Nosotros ←</span>
+          <span>Contacto</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page Hero -->
+    <div class="section-label">Page Hero (petit)</div>
+    <div class="wf-box wf-page-hero" style="flex-direction:column;">
+      <span class="wf-label" style="font-size:1.1rem;">Sobre Nosotros</span>
+      <span class="wf-note">Historia de pasión, família i sabors mediterranis des de 1998</span>
+    </div>
+
+    <!-- Història -->
+    <div class="section-label">Secció Història (grid 2 col: text esquerra + imatge dreta)</div>
+    <div class="wf-grid-2">
+      <div class="wf-box wf-text" style="flex-direction:column; align-items:flex-start; padding:0.75rem;">
+        <span class="wf-label">Una historia de familia y Mar</span>
+        <span class="wf-note">Fundat el 1998 per la família Martínez...</span>
+        <span class="wf-note">Paràgraf 2: Josep Martínez fundador...</span>
+        <span class="wf-note">Paràgraf 3: Carlos Martínez chef actual...</span>
+      </div>
+      <div class="wf-box wf-img" style="flex-direction:column;">
+        <span class="wf-label">[ IMATGE: Interior restaurant ]</span>
+        <span class="wf-note">Unsplash photo-1414235...</span>
+      </div>
+    </div>
+
+    <!-- Valors -->
+    <div class="section-label">Secció Valors (fons crema, 3 targetes amb icones HTML)</div>
+    <div style="background:#f5f0e8; padding:0.5rem;">
+      <div class="wf-grid-3">
+        <div class="wf-box" style="height:140px; flex-direction:column; gap:0.3rem; background:#fff;">
+          <span style="font-size:1.5rem;">♦</span>
+          <span class="wf-label">Calidad</span>
+          <span class="wf-note" style="text-align:center;">Selecció d'ingredients...</span>
+        </div>
+        <div class="wf-box" style="height:140px; flex-direction:column; gap:0.3rem; background:#fff;">
+          <span style="font-size:1.5rem;">★</span>
+          <span class="wf-label">Tradición</span>
+          <span class="wf-note" style="text-align:center;">Receptes de sempre...</span>
+        </div>
+        <div class="wf-box" style="height:140px; flex-direction:column; gap:0.3rem; background:#fff;">
+          <span style="font-size:1.5rem;">♻</span>
+          <span class="wf-label">Sostenibilidad</span>
+          <span class="wf-note" style="text-align:center;">Pesca sostenible...</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Equip -->
+    <div class="section-label">Secció Equip (grid 3 targetes persona: foto + nom + càrrec + bio)</div>
+    <div class="wf-grid-3">
+      <div class="wf-box wf-team-card" style="flex-direction:column; gap:0.3rem;">
+        <div style="width:100%; height:55%; background:#c0c8d0; display:flex; align-items:center; justify-content:center; font-size:0.7rem;">[ foto Carlos ]</div>
+        <span class="wf-label">Carlos Martínez</span>
+        <span style="font-size:0.7rem; color:#d4ac0d;">Chef Principal</span>
+        <span class="wf-note">20 anys d'experiència, format a Barcelona i Lyon</span>
+      </div>
+      <div class="wf-box wf-team-card" style="flex-direction:column; gap:0.3rem;">
+        <div style="width:100%; height:55%; background:#c0c8d0; display:flex; align-items:center; justify-content:center; font-size:0.7rem;">[ foto Laura ]</div>
+        <span class="wf-label">Laura García</span>
+        <span style="font-size:0.7rem; color:#d4ac0d;">Sous Chef</span>
+        <span class="wf-note">Especialista en arrossos mediterranis</span>
+      </div>
+      <div class="wf-box wf-team-card" style="flex-direction:column; gap:0.3rem;">
+        <div style="width:100%; height:55%; background:#c0c8d0; display:flex; align-items:center; justify-content:center; font-size:0.7rem;">[ foto Antonio ]</div>
+        <span class="wf-label">Antonio López</span>
+        <span style="font-size:0.7rem; color:#d4ac0d;">Maître</span>
+        <span class="wf-note">15 anys garantint la millor experiència</span>
+      </div>
+    </div>
+
+    <!-- Galeria -->
+    <div class="section-label">Galeria fotogràfica (grid 3 columnes, 6 imatges)</div>
+    <div style="background:#f5f0e8; padding:0.5rem;">
+      <div class="wf-grid-3">
+        <div class="wf-box wf-gallery-img"><span class="wf-note">[ Foto 1 ]</span></div>
+        <div class="wf-box wf-gallery-img"><span class="wf-note">[ Foto 2 ]</span></div>
+        <div class="wf-box wf-gallery-img"><span class="wf-note">[ Foto 3 ]</span></div>
+        <div class="wf-box wf-gallery-img"><span class="wf-note">[ Foto 4 ]</span></div>
+        <div class="wf-box wf-gallery-img"><span class="wf-note">[ Foto 5 ]</span></div>
+        <div class="wf-box wf-gallery-img"><span class="wf-note">[ Foto 6 ]</span></div>
+      </div>
+    </div>
+
+    <!-- Hites (llista ordenada) -->
+    <div class="section-label">Hites / Trajectory (llista &lt;ol&gt; amb subllista &lt;ul&gt; anidada)</div>
+    <div class="wf-box wf-timeline" style="flex-direction:column; align-items:flex-start; padding:0.75rem; background:#f8f8f0;">
+      <span class="wf-label" style="margin-bottom:0.5rem;">Nostra Trajectòria</span>
+      <ol style="list-style:decimal; padding-left:1.5rem; font-size:0.75rem;">
+        <li>1998 – Apertura del restaurante en la Barceloneta</li>
+        <li>2003 – Primera distinció gastronòmica
+          <ul style="list-style:disc; padding-left:1rem;">
+            <li>Premi Millor Paella de Barcelona</li>
+            <li>Reconeixement Guía Gourmand</li>
+          </ul>
+        </li>
+        <li>2010 – Renovació i ampliació del local</li>
+        <li>2015 – Incorporació del menú de degustació</li>
+        <li>2020 – Certificació de sostenibilitat</li>
+        <li>2024 – Celebració de 25 anys de tradició</li>
+      </ol>
+    </div>
+
+    <!-- Footer -->
+    <div class="section-label">Peu de pàgina</div>
+    <div class="wf-box wf-footer">
+      <span style="font-size:0.8rem;">[ Footer grid 4 columnes ]</span>
+    </div>
+
+  </div><!-- fi wireframe nosotros -->
+
+
+  <!-- ===================================================================
+       WIREFRAME 4: CONTACTO.HTML (Pàgina de Contacte i Reserves)
+       =================================================================== -->
+  <div class="page-wireframe">
+    <div class="page-title">
+      Pàgina 4: Contacto y Reservas (contacto.html)
+      <span>Formulari RGPD + informació de contacte + mapa</span>
+    </div>
+
+    <!-- Header -->
+    <div class="section-label">Capçalera (Header - ítem "Contacto" actiu)</div>
+    <div class="wf-box wf-header">
+      <div style="display:flex; justify-content:space-between; width:100%; padding:0 1rem; align-items:center;">
+        <span style="font-size:0.85rem; font-weight:bold;">LOGO</span>
+        <div style="display:flex; gap:0.5rem; font-size:0.8rem;">
+          <span>Inicio</span>
+          <span>La Carta</span>
+          <span>Sobre Nosotros</span>
+          <span class="wf-nav-active" style="padding:0.2rem 0.5rem;">Contacto ←</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page Hero -->
+    <div class="section-label">Page Hero (petit)</div>
+    <div class="wf-box wf-page-hero" style="flex-direction:column;">
+      <span class="wf-label" style="font-size:1.1rem;">Contacto y Reservas</span>
+      <span class="wf-note">¿Vols reservar una taula? Estiem aquí per ajudar-te</span>
+    </div>
+
+    <!-- Grid Formulari + Info -->
+    <div class="section-label">Sección principal (grid 2 columnes: formulari esquerra + info dreta)</div>
+    <div class="wf-grid-2" style="align-items:start;">
+
+      <!-- Formulari -->
+      <div class="wf-box wf-form" style="flex-direction:column; align-items:flex-start; padding:1rem; gap:0.5rem;">
+        <span class="wf-label">FORMULARI DE RESERVA</span>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; width:100%;">
+          <div class="wf-box" style="height:35px; background:#ddd; font-size:0.7rem;">[ Nom ]</div>
+          <div class="wf-box" style="height:35px; background:#ddd; font-size:0.7rem;">[ Cognoms ]</div>
+          <div class="wf-box" style="height:35px; background:#ddd; font-size:0.7rem;">[ Email * ]</div>
+          <div class="wf-box" style="height:35px; background:#ddd; font-size:0.7rem;">[ Telèfon ]</div>
+        </div>
+        <div class="wf-box" style="height:35px; background:#ddd; font-size:0.7rem; width:100%;">[ ▼ Nº persones: 1-2 / 3-4 / 5-8 / 9+ ]</div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; width:100%;">
+          <div class="wf-box" style="height:35px; background:#ddd; font-size:0.7rem;">[ Data reserva ]</div>
+          <div class="wf-box" style="height:35px; background:#ddd; font-size:0.7rem;">[ ▼ Hora: 13h/14h/20h/21h/22h ]</div>
+        </div>
+        <div class="wf-box" style="height:60px; background:#ddd; font-size:0.7rem; width:100%;">[ Textarea: Peticions especials... ]</div>
+        <div class="wf-box" style="height:35px; background:#e8f0e0; font-size:0.7rem; width:100%; border-left:3px solid green; justify-content:flex-start; padding:0 0.5rem;">☐ He llegit i accepto la Política de Privacitat (obligatori)</div>
+        <div class="wf-box" style="height:35px; background:#e8f8e0; font-size:0.7rem; width:100%; border-left:3px solid #8bc34a; justify-content:flex-start; padding:0 0.5rem;">☐ Vull rebre informació sobre promocions (opcional)</div>
+        <div class="wf-box" style="height:38px; background:gold; font-size:0.75rem; width:auto; font-weight:bold; padding:0 1rem;">[ Enviar reserva ]</div>
+        <span style="font-size:0.65rem; color:#888; width:100%;">Text RGPD: D'acord amb el RGPD... <u>Més informació</u></span>
+      </div>
+
+      <!-- Info de contacte + taula + mapa -->
+      <div style="display:flex; flex-direction:column; gap:0.5rem;">
+        <div class="wf-box" style="height:100px; flex-direction:column; align-items:flex-start; padding:0.75rem; background:#f0f4f8; gap:0.2rem;">
+          <span class="wf-label">Informació de Contacte</span>
+          <span style="font-size:0.7rem;">📍 Carrer de la Marina, 45, 08005 Barcelona</span>
+          <span style="font-size:0.7rem;">📞 +34 93 123 45 67</span>
+          <span style="font-size:0.7rem;">✉️ info@elrincondelmar.es</span>
+        </div>
+
+        <!-- Taula d'horaris amb colspan i rowspan -->
+        <div class="wf-box" style="height:auto; flex-direction:column; padding:0.75rem; background:#ece8e0; align-items:flex-start; gap:0.3rem;">
+          <span class="wf-label">TAULA HORARIS (amb colspan i rowspan)</span>
+          <table style="width:100%; border-collapse:collapse; font-size:0.7rem;">
+            <thead>
+              <tr style="background:#1a5276; color:white;">
+                <th style="padding:0.2rem 0.5rem; text-align:left;">Dia</th>
+                <th style="padding:0.2rem 0.5rem;" colspan="2">Horari (colspan=2)</th>
+              </tr>
+              <tr style="background:#154360; color:white;">
+                <th style="padding:0.1rem 0.5rem;"></th>
+                <th style="padding:0.1rem 0.5rem;">Dinar</th>
+                <th style="padding:0.1rem 0.5rem;">Sopar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background:#f5f5f5;">
+                <td style="padding:0.2rem 0.5rem;">Dt–Dv</td>
+                <td style="padding:0.2rem 0.5rem;">13:00–16:00</td>
+                <td style="padding:0.2rem 0.5rem;">20:00–23:00</td>
+              </tr>
+              <tr>
+                <td style="padding:0.2rem 0.5rem;">Ds–Dg</td>
+                <td style="padding:0.2rem 0.5rem;">12:30–16:30</td>
+                <td style="padding:0.2rem 0.5rem;">20:00–23:30</td>
+              </tr>
+              <tr style="background:#fff0f0;">
+                <td style="padding:0.2rem 0.5rem;">Dl</td>
+                <td colspan="2" style="padding:0.2rem 0.5rem; text-align:center; color:#c0392b;">✗ Tancat (colspan=2)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Mapa -->
+        <div class="wf-box wf-map" style="flex-direction:column;">
+          <span class="wf-label">[ MAPA OpenStreetMap ]</span>
+          <span class="wf-note">iframe embed: lat 41.3887 / lon 2.1958</span>
+          <span class="wf-note">+ Botons: Google Maps | Waze (target="_blank")</span>
+        </div>
+      </div>
+
+    </div><!-- fi grid 2 col -->
+
+    <!-- Footer -->
+    <div class="section-label">Peu de pàgina</div>
+    <div class="wf-box wf-footer">
+      <span style="font-size:0.8rem;">[ Footer grid 4 columnes ]</span>
+    </div>
+
+  </div><!-- fi wireframe contacto -->
+
+
+  <!-- ===================================================================
+       NOTES DE DISSENY I CONSIDERACIONS TÈCNIQUES
+       =================================================================== -->
+  <div style="max-width:1000px; margin:2rem auto; background:white; border:1px solid #ccc; padding:1.5rem;">
+    <h2 style="font-size:1.2rem; margin-bottom:1rem; border-bottom:2px solid #333; padding-bottom:0.5rem;">Notes de Disseny i Decisions Tècniques</h2>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; font-size:0.85rem;">
+
+      <div>
+        <h3 style="font-size:1rem; margin-bottom:0.5rem; color:#1a5276;">Tècniques CSS utilitzades</h3>
+        <ul style="list-style:disc; padding-left:1.2rem; color:#555; line-height:1.8;">
+          <li>Variables CSS (<code>:root</code>) per colors i tipografies</li>
+          <li>CSS Grid per als layouts de totes les pàgines</li>
+          <li>Menú hamburguesa: CSS-only (checkbox + sibling selector)</li>
+          <li>Banner cookies: CSS-only (<code>~</code> selector general sibling)</li>
+          <li>Disseny responsiu amb media queries (1024px i 768px)</li>
+          <li>Transicions suaus per a interaccions</li>
+          <li>Iframe responsiu per al vídeo (padding-bottom 56.25%)</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 style="font-size:1rem; margin-bottom:0.5rem; color:#1a5276;">Funcionalitats HTML semàntiques</h3>
+        <ul style="list-style:disc; padding-left:1.2rem; color:#555; line-height:1.8;">
+          <li>Tags semàntiques: <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;figure&gt;</code></li>
+          <li>Schema.org JSON-LD (metadades estructurades, index.html)</li>
+          <li>Open Graph per a xarxes socials</li>
+          <li>Formulari RGPD amb caselles de consentiment</li>
+          <li>Taules amb <code>colspan</code> i <code>rowspan</code></li>
+          <li>Llistes <code>&lt;ol&gt;</code> / <code>&lt;ul&gt;</code> anidades</li>
+          <li>Atributs ARIA per accessibilitat</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 style="font-size:1rem; margin-bottom:0.5rem; color:#1a5276;">Paleta de colors</h3>
+        <div style="display:flex; flex-direction:column; gap:0.4rem;">
+          <div style="display:flex; align-items:center; gap:0.5rem;">
+            <div style="width:24px; height:24px; background:#1a5276; border:1px solid #aaa;"></div>
+            <span><code>--primary: #1a5276</code> (blau mediterrani)</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:0.5rem;">
+            <div style="width:24px; height:24px; background:#154360; border:1px solid #aaa;"></div>
+            <span><code>--primary-dark: #154360</code></span>
+          </div>
+          <div style="display:flex; align-items:center; gap:0.5rem;">
+            <div style="width:24px; height:24px; background:#d4ac0d; border:1px solid #aaa;"></div>
+            <span><code>--secondary: #d4ac0d</code> (or mediterrani)</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:0.5rem;">
+            <div style="width:24px; height:24px; background:#faf9f7; border:1px solid #aaa;"></div>
+            <span><code>--bg-light: #faf9f7</code></span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 style="font-size:1rem; margin-bottom:0.5rem; color:#1a5276;">Estructura de fitxers</h3>
+        <pre style="background:#f5f5f5; padding:0.75rem; font-size:0.78rem; line-height:1.7; border:1px solid #ddd;">web/
+├── index.html
+├── carta.html
+├── nosotros.html
+├── contacto.html
+├── privacidad.html
+├── css/
+│   └── styles.css
+└── prototipat/
+    └── prototipat.html</pre>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
